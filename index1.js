@@ -35,8 +35,8 @@ lettable_of_employees_managment = document.getElementById(
   "table_of_employees_managment"
 );
 let refresh = document.getElementById("refresh");
-
 let chosen_file = document.getElementById("chosen_file");
+console.log(chosen_file.value)
 let value_of_supplier = document.getElementById("value_of_supplier");
 
 const remove = () => {
@@ -145,13 +145,15 @@ const product_info = () => {
   console.log(chosen_file.value);
   let slash = chosen_file.value.slice(2, 3);
 
-  let sources = chosen_file.value.replace(
-    "fakepath",
-    "Users" + slash + "Oracle" + slash + "Desktop"
-  );
+  // let sources = chosen_file.value.replace(
+  //   "fakepath",
+  //   "Users" + slash + "Oracle" + slash + "Desktop"
+  // );
 
 
+  let sources = chosen_file.value.replace('fakepath','Desktop')
 
+console.log(sources);
 
   let parent_of_div = document.getElementById("imgs-1");
   let main_div = document.createElement("div");
