@@ -36,7 +36,6 @@ lettable_of_employees_managment = document.getElementById(
 );
 let refresh = document.getElementById("refresh");
 let chosen_file = document.getElementById("chosen_file");
-console.log(chosen_file.value)
 let value_of_supplier = document.getElementById("value_of_supplier");
 
 const remove = () => {
@@ -142,7 +141,6 @@ const product_info = () => {
 
   // chosen_file.replaceChild(window.location.pathname)
   // img_src.push()
-  console.log(chosen_file.value);
   let slash = chosen_file.value.slice(2, 3);
 
   let sources = chosen_file.value.replace(
