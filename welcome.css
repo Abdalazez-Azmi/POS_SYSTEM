@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Slabo+27px&family=Tajawal:wght@300&display=swap");
+
+
+body{
+    background-image: url(images/full-supermarket-shopping-cart-shop-trolley-food-grocery-store-vector-icon-illustration-market-124716934.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Comfortaa", cursive;
+  font-family: "Slabo 27px", serif;
+  font-family: "Tajawal", sans-serif;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.login{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #2691d9;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    
+}
+
+
+.login span{
+    font-size: 40px;
+    color: royalblue;
+    font-weight: bold;
+
+}
+
+
+.login label{
+    color: rgb(32, 31, 31);
+    margin: 20px;
+    margin-right: 250px;
+}
+
+
+.login input{
+background-color: #e9f4fb;
+width: 95%;
+height: 35px;
+border-radius: 10px;
+font-size: 25px;
+
+
+}
+
+
+.login button {
+  
+    height: 50px;
+    border: 1px solid;
+    background-color: #2691d9;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.ss {
+    text-decoration: none;
+    font-size: 30px;
+    color: royalblue;
+    font-weight: bold;
+
+
+}
+.login button a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.login span a{
+    text-decoration: none;
+    font-size: 30px;
+    color: royalblue;
+    
+}
+
+.res{
+background-color: rgb(255, 255, 255);
+width: 40%;
+color: rgb(9, 53, 248);
+font-size: 35px;
+padding: 1px;
+border-radius: 10px;
+}

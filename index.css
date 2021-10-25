@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Slabo+27px&family=Tajawal:wght@300&display=swap");
+
+body {
+  background-image: url(images/main.jpg);
+  font-family: "Comfortaa", cursive;
+  font-family: "Slabo 27px", serif;
+  font-family: "Tajawal", sans-serif;
+  margin: 1px;
+  overflow: hidden;
+}
+
+
+
+
+.container {
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  box-shadow: 0px 0px 43px 17px rgba(153, 153, 153, 1);
+}
+
+#display {
+  text-align: right;
+  height: 22px;
+  line-height: 29px;
+  padding: 16px 8px;
+  font-size: 25px;
+}
+
+.buttons {
+  color: rgb(0, 0, 0);
+  display: grid;
+  border-bottom: 1px solid #999;
+  border-left: 1px solid#999;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.buttons > div {
+  border-top: 1px solid #999;
+  border-right: 1px solid#999;
+}
+
+.button {
+  border: 0.5px solid #999;
+  line-height: 40px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#equal {
+  background-color: rgb(236, 78, 4);
+  color: white;
+}
+
+.button:hover {
+  background-color: #df1616ed;
+  color: white;
+}
+
+#opeartion {
+  background-color: rgb(255, 179, 39);
+  color: white;
+}
+
+.a_tag {
+  padding: 10px;
+}
+.sup {
+  width: 100%;
+}
+
+.inp_g {
+  font-size: 30px;
+  padding: 8px;
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+}
+img {
+  width: 110%;
+}
+.date a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: orange;
+  padding: 12px;
+  margin-left: 20px;
+}
+
+.inp {
+  font-size: 30px;
+  padding: 8px;
+  width: 100px;
+  text-align: center;
+}
+
+.titles {
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgb(220, 255, 252);
+  padding: 12px;
+  margin-left: 20px;
+  border-radius: 15px;
+}
+
+.titles a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  border-radius: 15px;
+}
+
+.titles1 {
+  border-radius: 15px;
+
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgb(220, 255, 252);
+  padding: 12px;
+  margin-left: 1200px;
+}
+.titles1 a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  font-weight: bolder;
+}
+
+.slide_left {
+  /* position: fixed; */
+  width: 260px;
+  padding: 15px;
+}
+
+.slide_left img,
+.slide_right img {
+  border-radius: 25px;
+}
+
+.slide_right {
+  margin-top: -900px;
+  margin-left: 1555px;
+  width: 15%;
+  padding: 15px;
+  border-width: 5px;
+}
+table {
+  margin-left: 430px;
+  width: 1100px;
+  height: 10px;
+  margin-top: -700px;
+  text-align: center;
+}
+table thead {
+  font-weight: bold;
+  font-size: 30px;
+  padding: 15px;
+  background-color: royalblue;
+  margin-right: -50px;
+}
+table tbody tr td button :hover {
+  color: red;
+  margin: 100px;
+}
+table tbody {
+  font-size: 30px;
+  background-color: cornsilk;
+}
+table tbody tr :hover {
+  background-color: rgb(205, 208, 236);
+}
+table tbody td {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+table tbody td button {
+  color: white;
+  font-size: 20px;
+  background: rgb(206, 75, 24);
+  padding: 5px;
+  width: 50px;
+  font-size: 35px;
+  font-weight: 550;
+  border-radius: 5px;
+}
+#td_btn{
+  color: white;
+  font-size: 20px;
+  background: rgb(206, 75, 24);
+  padding: 5px;
+  width: 50px;
+  font-size: 35px;
+  font-weight: 550;
+  border-radius: 5px;
+}
+
+.inp {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px;
+  margin-top: 500px;
+  border-radius: 5px;
+  width: 80px;
+}
+
+.Money {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid black;
+  border-width: 2px;
+  margin-top: 500px;
+  border-radius: 5px;
+}
+
+.la {
+  margin: -100px;
+  margin-left: 500px;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  margin-top: 150px;
+}
+
+.la label {
+  background-color: rgb(255, 255, 255);
+  font-size: 35px;
+  color: black;
+  padding: 13px;
+  border-radius: 15px;
+
+}

@@ -1,0 +1,55 @@
+body{
+    background-image: url(images/thx.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+.f-p{
+    padding: 15px;
+    font-size: 20px;
+    text-transform: capitalize;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    text-transform: capitalize;
+
+
+}
+
+
+.s-p{
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    font-size: 20px;
+}
+iframe{
+width: 70%;
+margin: auto;
+height: 500px;
+margin-left: 170px;
+border-radius: 15px;
+
+
+}
+
+.back a{
+    padding:15px;
+font-size: 30px;
+text-decoration: none;
+color: black;
+
+}
+
+
+.v-t{
+    color: rgb(49, 49, 49);
+    font-size: 22px;
+}
+.v-t a {
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 11px;
+    padding: 10px;
+}

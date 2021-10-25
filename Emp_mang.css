@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Slabo+27px&family=Tajawal:wght@300&display=swap");
+
+body {
+  font-family: "Comfortaa", cursive;
+  font-family: "Slabo 27px", serif;
+  font-family: "Tajawal", sans-serif;
+  background-color: white;
+}
+.dark{
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 30px;
+  color: black;
+  margin-left: 90%;
+  margin-bottom: 100px;
+}
+
+#remove_btn1{
+font-size: 25px;
+padding: 10px;
+border-radius: 12px;
+
+
+}
+
+
+#emp_leaved{
+font-size: 30px;
+padding: 15px;
+
+
+
+}
+
+emp_leaved thead tr{
+
+  background-color: blanchedalmond;
+}
+
+
+
+
+.back a {
+  color: black;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 15px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.back {
+  font-size: 35px;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgb(241, 240, 236);
+}
+#crud {
+  color: red;
+  font-size: 20px;
+  background: rgb(136, 127, 255);
+  padding: 5px;
+  width: 50px;
+  font-size: 35px;
+  font-weight: 550;
+  border-radius: 5px;
+}
+
+.elem1 {
+  font-size: 45px;
+  color: rgb(2, 2, 2);
+  background-color: rgb(255, 255, 255);
+  width: 30%;
+  margin-left: 700px;
+}
+
+.main {
+  background-color: rgb(238, 111, 111);
+  font-size: 29px;
+  padding: 25px;
+  margin: 15px;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.main input {
+  width: 250px;
+  height: 40px;
+  border-radius: 15px;
+  margin: 20px;
+  font-size: 29px;
+}
+
+.main button {
+  font-size: 25px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.move-btn {
+  margin-top: 21px;
+}
+.move-btn button a {
+  color: black;
+  text-decoration: none;
+}
+
+table {
+  padding: 20px;
+  margin-top: 60px;
+  margin-left: 400px;
+  font-size: 27px;
+  text-align: center;
+}
+
+table tbody tr :hover {
+  background-color: rgb(251, 255, 20);
+}
+
+table thead {
+  background-color: rgb(102, 80, 228);
+}
+table tbody {
+  background-color: rgb(221, 217, 197);
+  padding: 15px;
+  margin: 20px;
+}
+
+table tbody tr button {
+  padding: 8px;
+  font-size: 25px;
+  border-radius: 5px;
+  margin: 3px;
+}

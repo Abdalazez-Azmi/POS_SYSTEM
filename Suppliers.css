@@ -1,0 +1,87 @@
+
+body{
+    background-color: rgb(24, 24, 23);
+}
+
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.back{
+font-size: 35px;
+background-color: rgb(236, 224, 224);
+padding: 15px;
+border-radius: 15px;
+
+}
+
+
+.back a{
+    font-size: 35px;
+    background-color: rgb(236, 224, 224);
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    
+    }
+    
+
+  
+
+  
+
+form{
+    color: white;
+    background-color: rgb(223, 80, 45);
+    padding: 50px;
+    height: 350px;
+    border-radius: 15px;
+    font-size: 30px;
+    margin-top: 100px;
+}
+form label{
+    color: white;
+    background-color: rgb(119, 179, 10);
+    padding: 10px;
+    margin: 0px;
+    border-radius: 15px;
+  
+}
+
+form input{
+    width: 350px;
+    height: 60px;
+    border-radius: 15px;
+    font-size: 30px;
+    padding: 2px;
+    margin: 10px;
+}
+
+table{
+    margin-top: 50px;
+    margin-left: 30%;
+
+}
+table thead tr{
+
+    text-align: center;
+    padding: 15px;
+    font-size: 33px;
+    background-color: rgb(238, 38, 38);
+    color: white;
+}
+table tbody tr{
+    background-color: rgb(255, 255, 255);
+    font-size: 33px;
+
+}
+
+table tbody tr :hover{
+    background-color: rgba(240, 217, 17, 0.952);
+}

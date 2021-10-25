@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="SearchProduct.css" />
+    <title>Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="Icons/icon.png" type="image/icon type">
+
+
+  </head>
+  <body>
+    <button class="back"><a href="index.html">Back</a></button>
+
+    <main>
+
+        <h1  class="total" >Total : </h1>
+        <input readonly value="0" type="number" id="total">
+        <div class="b-k">
+        
+        <button hidden id="refresh" class="back1"></button>
+
+    
+    <h1 class="elem1">Add New Products</h1>
+    <h1 class="elem1" id="response"></h1>
+    <div id="try2" class="elem2">
+        <label>Product Name :</label>
+        <input class="input_value_of_add_item" value="" type="text">
+    
+        <label>Dealer Price :</label>
+        <input class="input_value_of_add_item" type="number">
+    
+        <label>Counts :</label>
+        <input class="input_value_of_add_item" type="number">
+    <br>
+        <label>Customer Price :</label>
+        <input class="input_value_of_add_item" type="number">
+    
+        <label>Date :</label>
+        <input class="input_value_of_add_item" type="date">
+    <input  id='chosen_file' type="file">
+    
+        <div class="elem">
+        <button  type="reset"><a href='SearchProduct.html'>Clear</a></button>
+        <button id="insert" onclick="product_info()">Insert</button>
+    </div>
+    </div>
+    
+    </div>
+    <div class="sec-div">
+        <table  class="table">
+            <thead>
+                <tr >
+                    <td>Product Name</td>
+                    <td>Dealer Price</td>
+                    <td>Counts</td>
+                    <td>Customer Price</td>
+                    <td>Date</td>
+                    <td>Total</td>
+                    <td>Add ITems</td>
+                    <td>Remove ITems</td>
+                    
+                    <td>Remove</td>
+                    
+                </tr>
+            </thead>
+            <tbody id="table_add_product"  >
+              
+                
+            </tbody>
+            
+          </table>
+          <input id="value_of_supplier" placeholder="Total Of Supplier" readonly type="number">
+            <br>
+            <br>
+            <br>
+            <h1 id="status" class="total" ></h1>
+
+            <br>
+            <div class="right-side">
+  
+       
+        </div>
+ 
+
+  
+</div>
+</div>
+<div>
+
+            <br>
+            <br>
+      <div id="imgs-1" class="imgs-1">
+          <div class="final" >
+            <img src="images/imageProduct/4.png" />
+          <div class="">  
+            <span onclick="Additems()" class="icon" id="icon">+</span>
+            <span class="count_items"></span>
+            <span onclick="remove_items()" id="icon1" >-</span>
+            <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+          </div>
+           
+          <span class="product_name" id="product_name">Tost</span>
+        </div>
+          </div>
+          </div>
+              </div>
+            
+              <div class="final" >
+                <img src="images/imageProduct/5.png" />
+              <div class="">  
+                <span onclick="Additems()" class="icon" id="icon">+</span>
+                <span class="count_items"></span>
+                <span onclick="remove_items()" id="icon1" >-</span>
+                <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.25' id="item-price" class="inp" >
+              </div>
+               
+              <span class="product_name" id="product_name">Coca Cola</span>
+            </div>
+              </div>
+              </div>
+                  </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/6.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Carolina Orange</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/7.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Carolina apple</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/8.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Mazraa yougrt</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/9.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.50' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">Labana Jerash</span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/10.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.75' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Mazraa yougrt</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/11.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Almarai labana</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/12.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Tebba Labaneh</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/13.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.35' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Al Jenadi 250m</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/14.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">Al Jenadi 1 Liter</span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/15.png" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.35' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">AlMarai strawberry milk </span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/16.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.75' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">Almarai Style yougrt</span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/17.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.35' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">Suntop Mango 250m</span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/18.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.35' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">Suntop fruits</span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/20.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span  onclick="remove_items()"id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Vimto Grapes 6</span>
+                 
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/21.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">Caesar Orange</span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/22.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.50' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Lion choclate</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/23.jpg" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.75' id="item-price" class="inp" >
+                </div>
+                <span class="product_name" id="product_name">Laviva Choclate</span>
+                
+                        </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/24.png" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.50' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">Chicken 1kg</span>
+              </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+                <div class="final" >
+                  <img src="images/imageProduct/25.png" />
+                <div class="">  
+                  <span onclick="Additems()" class="icon" id="icon">+</span>
+                  <span class="count_items"></span>
+                  <span onclick="remove_items()" id="icon1" >-</span>
+                  <span class="price-word"> Price :</span>
+          <input readonly type="number" value='1.00' id="item-price" class="inp" >
+                </div>
+                 
+                <span class="product_name" id="product_name">fresh Milk</span>
+
+                        </div>
+                </div>
+                </div>
+                    </div>
+                    <div class="final" >
+                        <img src="images/imageProduct/26.png" />
+                      <div class="">  
+                        <span onclick="Additems()" class="icon" id="icon">+</span>
+                        <span class="count_items"></span>
+                        <span onclick="remove_items()" id="icon1" >-</span>
+                        <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.35' id="item-price" class="inp" >
+                      </div>
+                      <span class="product_name" id="product_name">Nice Chips</span>
+                      
+                              </div>
+                      </div>
+                      </div>
+                          </div>
+                          <div class="final" >
+                            <img src="images/imageProduct/27.png" />
+                          <div class="">  
+                            <span onclick="Additems()" class="icon" id="icon">+</span>
+                            <span class="count_items"></span>
+                            <span onclick="remove_items()" id="icon1" >-</span>
+                            <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.35' id="item-price" class="inp" >
+                          </div>
+                          <span class="product_name" id="product_name">Suntop Orange</span>
+                          
+                                  </div>
+                          </div>
+                          </div>
+                              </div>
+                              <div class="final" >
+                                <img src="images/imageProduct/28.jfif" />
+                              <div class="">  
+                                <span onclick="Additems()" class="icon" id="icon">+</span>
+                                <span class="count_items"></span>
+                                <span onclick="remove_items()" id="icon1" >-</span>
+                                <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.25' id="item-price" class="inp" >
+                              </div>
+                              <span class="product_name" id="product_name">Toblerone</span>
+                              
+                                      </div>
+                              </div>
+                              </div>
+                                  </div>
+                                  <div class="final" >
+                                    <img src="images/imageProduct/29.jpg" />
+                                  <div class="">  
+                                    <span onclick="Additems()" class="icon" id="icon">+</span>
+                                    <span class="count_items"></span>
+                                    <span onclick="remove_items()" id="icon1" >-</span>
+                                    <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.75' id="item-price" class="inp" >
+                                  </div>
+                                  <span class="product_name" id="product_name">Kinder bueno white</span>
+                                  
+                                          </div>
+                                  </div>
+                                  </div>
+                                      </div>  
+                                      <div class="final" >
+                                        <img src="images/imageProduct/30.jpg" />
+                                      <div class="">  
+                                        <span onclick="Additems()" class="icon" id="icon">+</span>
+                                        <span class="count_items"></span>
+                                        <span onclick="remove_items()" id="icon1" >-</span>
+                                        <span class="price-word"> Price :</span>
+          <input readonly type="number" value='0.50' id="item-price" class="inp" >
+                                      </div>
+                                       
+                                      <span class="product_name" id="name1">Mars Chocklate</span>
+                                              </div>
+                                      </div>
+                                      </div>
+                                          </div>
+                  
+    </main>
+    <script src="index1.js"></script>
+  </body>
+  </html>
+  <button class="edit_operator">-</button>

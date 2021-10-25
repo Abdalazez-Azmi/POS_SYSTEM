@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Main Page</title>
+    <link rel="icon" href="Icons/icon.png" type="image/icon type">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+  </head>
+  <body>
+    <header>
+      <div>
+        <span id="MyClockDisplay" class="titles" onload="showTime()"> </span>
+        <span class="titles"><a href="Home.html">Logout</a></span>
+
+        <!-- h1 for sysdate -->
+        <span class="titles1"><a href="SearchProduct.html">Products</a></span>
+      </div>
+
+      <!--slide left -->
+      <div class="slide_left" id="slide_left">
+        <a class="a_tag" href="SearchProduct.html"
+          ><img src="images/DATE FORMAT SQL.png"
+        /></a>
+        <section>
+          <div class="container">
+            <div id="display"></div>
+            <div class="buttons">
+              <div class="button">C</div>
+              <div class="button">/</div>
+              <div class="button">*</div>
+              <div class="button">&larr;</div>
+              <div class="button">7</div>
+              <div class="button">8</div>
+              <div class="button">9</div>
+              <div class="button">-</div>
+              <div class="button">4</div>
+              <div class="button">5</div>
+              <div class="button">6</div>
+              <div class="button">+</div>
+              <div class="button">1</div>
+              <div class="button">2</div>
+              <div class="button">3</div>
+              <div class="button">.</div>
+              <div class="button">(</div>
+              <div class="button">0</div>
+              <div class="button">)</div>
+              <div id="equal" class="button">=</div>
+            </div>
+          </div>
+        </section>
+        <br>
+        <a href="Content.html"><img src="images/icc.jpg" alt=""></a>
+      </div>
+      <div class="slide_right">
+        <a href="Suppliers.html"><img src="images/Cart-add-icon.png" /></a>
+        <a href="emp_manag.html"><img src="images/employee_mangment.png" /></a>
+        <a href="Knooz_Al_Marifa.html"><img src="images/knooz-Al-Marifa.jpg"></a>
+      </div>
+    </header>
+    <main>
+      <table id="table_main">
+        <thead>
+          <tr>
+            <td>Product Name</td>
+            <td>Counts</td>
+            <td>Price</td>
+            <td>Add Items</td>
+            <td>Remove Items</td>
+            <td>Total</td>
+            <td>Delete</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+        
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="la">
+        <!-- Prices -->
+
+        <div>
+          <label>Total :</label>
+
+          <input readonly id="main_Total" class="inp_g" value="0" type="number" />
+          <label>How Much Customer Give You </label>
+          <input readonly class="inp" id="cust_give_you" type="number" />
+          <label>Return to Customer </label>
+          <input readonly id="give_cust" class="inp" type="number" />
+        </div>
+      </div>
+    </main>
+   
+
+    <br />
+
+    <script src="index1.js"></script>
+  </body>
+</html>

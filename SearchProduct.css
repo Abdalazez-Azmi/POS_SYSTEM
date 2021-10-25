@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Slabo+27px&family=Tajawal:wght@300&display=swap");
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+body {
+  margin: 10px;
+  background-image: url(images/1624960.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-size: 50px;
+}
+
+.elem1 {
+  font-size: 45px;
+  color: rgb(43, 82, 97);
+  background-color: rgb(214, 214, 214);
+  width: 20%;
+  margin-left: 700px;
+}
+table tbody tr :hover {
+  background-color: rgb(251, 255, 20);
+}
+.elem2 {
+  background-color: tomato;
+  padding: 35px;
+  margin: 50px;
+  font-size: 30px;
+  border-radius: 25px;
+  height: 300px;
+}
+#crud {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  background: rgb(255, 255, 255);
+  padding: 5px;
+  width: 50px;
+  font-size: 35px;
+  font-weight: 550;
+  border-radius: 5px;
+}
+
+.elem2 input {
+  margin-bottom: -20px;
+  margin: 19px;
+  padding: 2px;
+  width: 360px;
+  height: 50px;
+  font-size: 29px;
+  border-radius: 15px;
+}
+
+.elem button {
+  font-size: 25px;
+  font-weight: bolder;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.elem button a {
+  text-decoration: none;
+  color: black;
+}
+.back a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 15px;
+}
+
+.header {
+  color: rgb(0, 0, 0);
+  font-size: 35px;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+}
+
+
+#main_div {
+  margin-left: 300px;
+  text-align: center;
+  padding: 11px;
+  width: 50%;
+  font-size: 35px;
+  color: rgb(243, 243, 243);
+  display: none;
+}
+#main_div thead tr {
+  background-color: rgb(15, 13, 13);
+  color: white;
+}
+#main_div tbody tr {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+#Add_count{
+
+  padding: 10px;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+}
+
+.crud {
+  padding: 10px;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+}
+table tr :hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(243, 243, 243);
+}
+.table {
+  font-size: 25px;
+  margin: 100px;
+  padding: 20px;
+  text-align: center;
+  margin-left: 27%;
+}
+
+table thead tr {
+  background-color: rgb(254, 255, 242);
+}
+
+table tbody tr {
+  background-color: rgb(202, 29, 29);
+  margin: 15px;
+  padding: 20px;
+  color: rgb(255, 255, 255);
+}
+
+#value_of_supplier {
+  width: 250px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 30px;
+  margin-left: 1250px;
+}
+
+.input {
+  background-color: brown;
+}
+
+.back1 {
+  font-size: 35px;
+  padding: 15px;
+  background-color: rgb(233, 228, 216);
+}
+.back1 a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+}
+.total {
+  background-color: rgb(250, 255, 255);
+  font-size: 37px;
+  display: inline;
+  margin: 15px;
+  color: brown;
+  border-radius: 10px;
+}
+
+
+.back {
+  font-size: 35px;
+  padding: 15px;
+  background-color: rgb(227, 221, 230);
+  margin-top: -300px;
+}
+
+.btn {
+  border-radius: 15px;
+  font-size: 30px;
+  padding: 4px;
+  background-color: rgb(123, 172, 153);
+  font-weight: bold;
+}
+.btn :hover {
+  color: red;
+  transition: 0.4s ease-in-out;
+}
+
+.product_name {
+  text-transform: capitalize;
+  font-size: 29px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  font-size: 30px;
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  display: grid;
+}
+
+.right-side {
+  right: 1000px;
+  margin-left: 1400px;
+  text-decoration: none;
+}
+
+.right-side a {
+  color: black;
+  font-size: 30px;
+  margin: 0px;
+  padding: 10px;
+
+  text-decoration: none;
+}
+.right-side a :focus {
+  background-color: crimson;
+  color: orangered;
+}
+
+#total {
+  border-radius: 10px;
+  font-size: 35px;
+  padding: 8px;
+  width: 150px;
+}
+
+.inp {
+  font-size: 30px;
+  padding: 8px;
+  width: 100px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+img {
+  width: 500px;
+  height: 650px;
+}
+.price-word {
+  background-color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 5px;
+  color: #ce4949;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.final {
+  border-style: solid;
+  border-color: rgb(204, 25, 25);
+  width: 500px;
+  display: inline-block;
+  border-width: 15px;
+  border-radius: 30px;
+}
+#icon {
+  font-weight:  1000;
+  color: rgb(241, 241, 241);
+  width: 50px;
+  height: 20px;
+  border-color: rgb(255, 255, 255);
+  border-width: 10px;
+  border-style: solid;
+  padding: 4px;
+  border-radius: 15px;
+}
+.b-k{
+  background-color: rgba(0, 0, 0, 0.774);
+  border-radius: 15px;
+}
+
+
+
+.sec-div{
+  background-color: rgba(0, 0, 0, 0.774);
+  border-radius: 15px;
+
+}
+
+.count_items {
+  display: none;
+  color: crimson;
+  font-size: 56px;
+  padding: 2px;
+  margin: 5px;
+  font-weight: bold;
+  border: 9px white solid;
+  border-radius: 15px;
+  background-color: white;
+}
+#icon1 {
+  color: rgb(255, 255, 255);
+  font-size: 100px;
+  font-weight: bold;
+  border-color: rgb(250, 250, 250);
+  border-width: 2px;
+  /* border-style: solid; */
+  padding: 4px;
+  margin: 20px;
+  padding: 10px;
+  height: 15px;
+  border-width: 10px;
+  border-radius: 15px;
+}

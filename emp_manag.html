@@ -1,0 +1,88 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees Managment</title>
+    <link rel="stylesheet" href="Emp_mang.css">
+    <link rel="icon" href="Icons/icon.png" type="image/icon type">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button class="back"><a href="index.html">Back</a></button>
+    <button onclick="darkmode()"  class="dark" id="darkmode">Dark</button>
+
+    <h1 class="elem1">Employees Managment</h1>
+    <h1 id="h1_For_error" class="elem1"></h1>
+
+    <div>
+        <div class="main">
+            <label>Employee_id</label>
+            <input class="employee_input" type="number">
+            <label> First_name</label>
+            <input class="employee_input"  type="text">
+            <label>Last_name</label>
+            <input class="employee_input"  type="text">
+            <label>Salary</label>
+            <input class="employee_input"  type="number">
+            <label>Address</label>
+            <input class="employee_input"  type="text">
+            <label>Hire_Date</label>
+            <input class="employee_input"  type="date">
+            <label>Phone Number</label>
+            <input class="employee_input"  type="number">
+ 
+            <div class="move-btn">
+            <button id="clear"  onclick='clear_data()'>Clear</button>
+            <button onclick="insert_data()">Insert</button>
+        </div>
+        </div>
+    <div>
+        <table id="table_of_employees_managment">
+            <thead>
+                <tr>
+                    <td>Employee_id</td>
+                    <td>First_name</td>
+                    <td>Last_name</td>
+                    <td>Salary</td>
+                    <td>Address</td>
+                    <td>Hire_Date</td>
+                    <td>Phone Number</td>
+                    <td>Edit</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+ 
+            </tbody>
+        </table>
+    </div>
+<div>
+    <h1 class="elem1">Employees Leaved the store</h1>
+    <table >
+        <thead>
+            <tr>
+                <td>Employee_id</td>
+                <td>First_name</td>
+                <td>Last_name</td>
+                <td>Salary</td>
+                <td>Address</td>
+                <td>Hire_Date</td>
+                <td>Phone Number</td>
+                <td>Edit</td>
+            </tr>
+        </thead>
+        <tbody id="emp_leaved">
+        </tbody>
+    </table>
+</div>
+
+    </div>
+
+
+
+    <script src="index1.js"></script>
+</body>
+</html>

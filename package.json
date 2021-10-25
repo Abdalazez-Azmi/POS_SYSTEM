@@ -1,0 +1,25 @@
+{
+  "name": "pos",
+  "version": "1.0.0",
+  "main": "index1.js",
+  "scripts": {
+    "dev": "nodemon backend.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "express": "^4.17.1",
+    "oracledb": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdalazez-Azmi/POS_SYSTEM_JS_DOM.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abdalazez-Azmi/POS_SYSTEM_JS_DOM.github.io/issues"
+  },
+  "homepage": "https://github.com/Abdalazez-Azmi/POS_SYSTEM_JS_DOM.github.io#readme",
+  "description": ""
+}
