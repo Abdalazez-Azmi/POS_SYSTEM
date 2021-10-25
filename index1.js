@@ -145,13 +145,13 @@ const product_info = () => {
   console.log(chosen_file.value);
   let slash = chosen_file.value.slice(2, 3);
 
-  // let sources = chosen_file.value.replace(
-  //   "fakepath",
-  //   "Users" + slash + "Oracle" + slash + "Desktop"
-  // );
+  let sources = chosen_file.value.replace(
+    "fakepath",
+    "Users" + slash + "Oracle" + slash + "Desktop"
+  );
 
 
-  let sources = chosen_file.value.replace('fakepath','Desktop')
+  // let sources = chosen_file.value.replace('fakepath','Desktop')
 
 console.log(sources);
 
