@@ -278,6 +278,7 @@ let e_1 = document.getElementsByClassName("e_1");
 
 window.onload = function () {
   var http = new XMLHttpRequest();
+
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
       let data = JSON.stringify(http.response);
