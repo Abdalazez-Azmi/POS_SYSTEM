@@ -4,6 +4,7 @@ let main_Total = document.getElementById("main_Total");
 let stat_1 = document.getElementById("status");
 let tag4 = document.getElementById("tag4");
 let countOfItem = document.getElementsByClassName("count_items");
+let sec_div = document.getElementById('sec_div')
 let input_price = document.getElementById("item-price");
 let main_items = document.getElementById("main_items");
 let main_price = document.getElementById("main_price");
@@ -20,6 +21,7 @@ let Accounts = document.getElementById("Accounts");
 let t_body = document.getElementById("t_body");
 let cust_give_you = document.getElementById("cust_give_you");
 let give_cust = document.getElementById("give_cust");
+let show= document.getElementById('show')
 let td = document.getElementById("tb");
 let leaved = document.getElementById("leaved");
 let employee_input = document.getElementsByClassName("employee_input");
@@ -48,6 +50,30 @@ const remove = () => {
     last[i].innerHTML = arr[i];
   }
 };
+
+
+
+const show_data=()=>{
+if (sec_div.style.display !== 'none') {
+  sec_div.style.display='none'
+  show.innerHTML= 'Show Data'
+}else{
+
+  sec_div.style.display='block'
+  show.innerHTML='Hide Data'
+}
+  
+
+}
+
+
+
+
+
+
+
+
+
 
 $(document).ready(function () {
   var iframeWindow = document.getElementById("my-iframe-id").contentWindow;
