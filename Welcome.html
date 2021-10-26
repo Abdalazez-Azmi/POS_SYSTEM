@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
-    <link rel="stylesheet" href="welcome.css">
-    <link rel="icon" href="Icons/icon.png" type="image/icon type">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-</head>
-<body>
-    <h1 class="res" id='status_of_rigister'></h1>
+    <link rel="stylesheet" href="welcome.css" />
+    <link rel="icon" href="Icons/icon.png" type="image/icon type" />
+  </head>
+  <body>
+    <h1 hidden class="res" id="status_of_rigister"></h1>
     <div class="login">
-        
-        <span> Rigister</span>
-        <br>
-        <br>
-        <label>Username</label>
-        <br>
-        
-        <input id='input_for_username' type="text">
-        <br>
-        <br>
-        <label>Password</label>
-        <input id='input_for_pass' type='password'>
-        <br>
-        <br>
-        <button onclick="rigister()"><a id="tag_of_href" class="ss" href="#">Rigister</a></button>
-        
-<span><a href='Home.html'> <br>I Already Have Account</a></span>
+      <span> Rigister</span>
+      <br />
+      <br />
+      <label>Username</label>
+      <br />
+
+      <input
+        placeholder="Enter Your Username"
+        id="input_for_username"
+        type="text"
+      />
+      <br />
+      <br />
+      <label>Password</label>
+      <input
+        placeholder="Enter Your Password"
+        id="input_for_pass"
+        type="password"
+      />
+      <br />
+      <br />
+      <button onclick="rigister()">
+        <a id="tag_of_href" class="ss" href="#">Rigister</a>
+      </button>
+
+      <span
+        ><a href="Home.html" class="a-tag">
+          <br />I Already Have Account</a
+        ></span
+      >
     </div>
 
-
-    
-
     <script src="home.js"></script>
-</body>
+  </body>
 </html>

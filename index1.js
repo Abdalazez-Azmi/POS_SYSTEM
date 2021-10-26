@@ -1,4 +1,3 @@
-
 let add_items = document.getElementById("icon");
 let products_total = document.getElementById("total");
 let main_Total = document.getElementById("main_Total");
@@ -50,26 +49,16 @@ const remove = () => {
   }
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
   var iframeWindow = document.getElementById("my-iframe-id").contentWindow;
 
-  iframeWindow.addEventListener("load", function() {
-      var doc = iframe.contentDocument || iframe.contentWindow.document;
-      var target = doc.getElementById("my-target-id");
+  iframeWindow.addEventListener("load", function () {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var target = doc.getElementById("my-target-id");
 
-      target.innerHTML = "Found it!";
+    target.innerHTML = "Found it!";
   });
 });
-
-
-
-
-
-
-
-
-
-
 
 const product_info = () => {
   let row = table_add_product.insertRow();
@@ -148,10 +137,9 @@ const product_info = () => {
     "Users" + slash + "Oracle" + slash + "Desktop"
   );
 
-
   // let sources = chosen_file.value.replace('fakepath','Desktop')
 
-console.log(sources);
+  console.log(sources);
 
   let parent_of_div = document.getElementById("imgs-1");
   let main_div = document.createElement("div");
@@ -240,7 +228,6 @@ console.log(sources);
 
   add_accounts();
 };
-
 const add_accounts = () => {
   if (Accounts.innerHTML === "Show Information") {
     main_div.style.display = "none";
@@ -266,6 +253,22 @@ const add_accounts = () => {
   }
 };
 
+let e_1 = document.getElementsByClassName("e_1");
+
+window.onload = function () {
+  var http = new XMLHttpRequest();
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 200) {
+      let data = JSON.stringify(http.response);
+      console.log(data);
+    }
+  };
+  http.open("GET", "http://localhost:5502/", true);
+  http.send();
+};
+
+// let e_1 = document.getElementsByClassName('e_1')
+
 const darkmode = () => {
   let darkmode = document.getElementById("darkmode");
   if (darkmode.innerHTML === "Dark") {
@@ -279,31 +282,6 @@ const darkmode = () => {
 let display = document.getElementById("display");
 
 let buttons = Array.from(document.getElementsByClassName("button"));
-
-
-// $(function () {
-//   $.get('http://localhost:5502/', function (data) {
-//     console.log(data)
-    
-//   });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 buttons.map((button) => {
   button.addEventListener("click", (e) => {
@@ -329,9 +307,6 @@ buttons.map((button) => {
   });
 });
 
-
-
-
 let counter = 0;
 
 const Additems = () => {
@@ -348,10 +323,10 @@ const Additems = () => {
     //   },
     // ];
 
-    countOfItem[i].innerHTML = counter
+    countOfItem[i].innerHTML = counter;
 
     prices.push(var1[i].value);
-    let result = (prices[i] * counter);
+    let result = prices[i] * counter;
     products_total.value = result;
 
     localStorage.setItem("prices", prices);
@@ -597,7 +572,6 @@ function showTime() {
   document.getElementById("MyClockDisplay").textContent = time;
 
   setTimeout(showTime, 1000);
-
 }
 
 showTime();

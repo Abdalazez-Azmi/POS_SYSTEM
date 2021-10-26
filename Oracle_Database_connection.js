@@ -1,10 +1,14 @@
 const express = require("express");
 const oracledb = require("oracledb");
 const app = express();
+const cors = require("cors")
+app.use(cors())
+app.use(express.json())
+
 const port = 5502;
 var password = "hr";
-var data = 'insert into suppliers values ("Ali","Frozen","0797819843");'
-var data = 'select * from employees;'
+// var data = 'insert into suppliers values ("Ali","Frozen","0797819843");'
+var data = 'select employee_id,first_name,last_name from employees where department_id = 100'
 
 
 
@@ -44,6 +48,7 @@ async function selectAllEmployees(req, res) {
     } else {
       result = result.rows;
       console.log(result); 
+    
 
       //send all employees
 

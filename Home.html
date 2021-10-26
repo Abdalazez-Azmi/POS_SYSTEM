@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="icon" href="Icons/icon.png" type="image/icon type">
 
 </head>
@@ -23,6 +25,7 @@
      <label >Password</label>
      <br>
      <input type="password" id="login_password" placeholder="Enter Your Password" >
+     <img id="hide" src="Icons/hide.png"> 
      <br>
      <br>
      <button onclick="login()"><a id='href_login' href='#'>Login</a></button>
@@ -31,7 +34,7 @@
      <a href="Welcome.html">Rigister</a>
      </div>
 
- <h1 class="res" id="status_of_login"></h1>
+ <h1 hidden class="res" id="status_of_login"></h1>
     
 
 

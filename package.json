@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index1.js",
   "scripts": {
-    "dev": "nodemon backend.js",
+    "dev": "nodemon Oracle_Database_connection.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.22.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "oracledb": "^5.2.0"
   },
