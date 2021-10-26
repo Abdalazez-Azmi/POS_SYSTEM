@@ -4,7 +4,6 @@ let main_Total = document.getElementById("main_Total");
 let stat_1 = document.getElementById("status");
 let tag4 = document.getElementById("tag4");
 let countOfItem = document.getElementsByClassName("count_items");
-let sec_div = document.getElementById('sec_div')
 let sec_div = document.getElementById("sec_div");
 let input_price = document.getElementById("item-price");
 let main_items = document.getElementById("main_items");
