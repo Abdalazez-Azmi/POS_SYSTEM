@@ -333,17 +333,25 @@ let counter = 0;
 const Additems = () => {
   let item_name = document.getElementsByClassName("product_name");
   let var1 = document.getElementsByClassName("inp");
-
+  
   let prices = [];
   for (let i = 0; i < item_name.length; i++) {
-    countOfItem[i].style.display = "inline-block";
     let arr_items = [{}];
     arr_items.push({
       name: item_name[i].innerHTML,
       Price: var1[i].value,
       Count: 0,
     });
-    countOfItem[i].innerHTML = arr_items[i].Count;
+    countOfItem[i].innerHTML = 0
+    countOfItem[i].style.display = "inline-block";
+    $(document).ready(function(){
+      $('#icon').click(function(){
+        arr_items[i].count+=1
+
+        countOfItem[i].innerHTML=arr_items[0].Count
+
+      })
+    })
 
     prices.push(var1[i].value);
     // let result = prices[i] * counter;
