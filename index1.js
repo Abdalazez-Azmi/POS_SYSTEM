@@ -316,25 +316,28 @@ const Additems = () => {
   counter++;
   for (let i = 0; i < item_name.length; i++) {
     countOfItem[i].style.display = "inline-block";
-    // let products = [
-    //   {
-    //     name: "tost",
-    //     count: 0,
-    //   },
-    // ];
-
-    countOfItem[i].innerHTML = counter;
-
-    prices.push(var1[i].value);
-    let result = prices[i] * counter;
-    products_total.value = result;
-
-    localStorage.setItem("prices", prices);
-    localStorage.setItem("result", result);
-    localStorage.setItem("item_name", item_name[i].innerHTML);
-    localStorage.setItem("counter", counter);
-    // console.log(item_name[i].innerHTML);
+    
+    let arr_items = [{}];
+    
+    arr_items[i]=({"name":item_name[i].innerHTML,"Count":0})
+    
+    
   }
+
+
+
+  console.log(arr_items);
+  countOfItem[i].innerHTML = counter;
+
+  prices.push(var1[i].value);
+  let result = prices[i] * counter;
+  products_total.value = result;
+
+  localStorage.setItem("prices", prices);
+  localStorage.setItem("result", result);
+  localStorage.setItem("item_name", item_name[i].innerHTML);
+  localStorage.setItem("counter", counter);
+  // console.log(item_name[i].innerHTML);
 };
 
 const main_table_of_products = () => {
