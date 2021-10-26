@@ -6,9 +6,9 @@ app.use(cors())
 app.use(express.json())
 
 const port = 5502;
-var password = "hr";
+var password = "pos";
 // var data = 'insert into suppliers values ("Ali","Frozen","0797819843");'
-var data = 'select employee_id,first_name,last_name from employees where department_id = 100'
+var data = 'select * from suppliers'
 
 
 
@@ -17,7 +17,7 @@ var data = 'select employee_id,first_name,last_name from employees where departm
 async function selectAllEmployees(req, res) {
   try {
     connection = await oracledb.getConnection({
-      user: "hr",
+      user: "pos",
       password: password,
       connectString: "localhost:1521/orcl",
     });
