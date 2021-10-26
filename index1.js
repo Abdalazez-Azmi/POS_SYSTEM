@@ -5,6 +5,7 @@ let stat_1 = document.getElementById("status");
 let tag4 = document.getElementById("tag4");
 let countOfItem = document.getElementsByClassName("count_items");
 let sec_div = document.getElementById('sec_div')
+let sec_div = document.getElementById("sec_div");
 let input_price = document.getElementById("item-price");
 let main_items = document.getElementById("main_items");
 let main_price = document.getElementById("main_price");
@@ -21,7 +22,7 @@ let Accounts = document.getElementById("Accounts");
 let t_body = document.getElementById("t_body");
 let cust_give_you = document.getElementById("cust_give_you");
 let give_cust = document.getElementById("give_cust");
-let show= document.getElementById('show')
+let show = document.getElementById("show");
 let td = document.getElementById("tb");
 let leaved = document.getElementById("leaved");
 let employee_input = document.getElementsByClassName("employee_input");
@@ -51,29 +52,15 @@ const remove = () => {
   }
 };
 
-
-
-const show_data=()=>{
-if (sec_div.style.display !== 'none') {
-  sec_div.style.display='none'
-  show.innerHTML= 'Show Data'
-}else{
-
-  sec_div.style.display='block'
-  show.innerHTML='Hide Data'
-}
-  
-
-}
-
-
-
-
-
-
-
-
-
+const show_data = () => {
+  if (sec_div.style.display !== "none") {
+    sec_div.style.display = "none";
+    show.innerHTML = "Show Data";
+  } else {
+    sec_div.style.display = "block";
+    show.innerHTML = "Hide Data";
+  }
+};
 
 const product_info = () => {
   let row = table_add_product.insertRow();
@@ -146,19 +133,24 @@ const product_info = () => {
   // chosen_file.replaceChild(window.location.pathname)
   // img_src.push()
 
-
-
-  console.log(chosen_file.value)
+  console.log(chosen_file.value);
   let slash = chosen_file.value.slice(2, 3);
 
   let sources = chosen_file.value.replace(
     "fakepath",
-    "Users" + slash + "Oracle" + slash + "Desktop" + slash + "POS_SYSTEM" + slash + "Add_new_Products" 
+    "Users" +
+      slash +
+      "Oracle" +
+      slash +
+      "Desktop" +
+      slash +
+      "POS_SYSTEM" +
+      slash +
+      "Add_new_Products"
   );
   // let sources = chosen_file.value.replace(
   //   "fakepath","Add_new_Products"
   // );
-
 
   console.log(sources);
 
@@ -176,7 +168,7 @@ const product_info = () => {
   span.setAttribute("onclick", "Additems()");
   span.setAttribute("class", "icon");
   span.setAttribute("id", "icon");
-  span.innerHTML='+'
+  span.innerHTML = "+";
   secound_div.appendChild(span);
   let span_for_Count = document.createElement("span");
   span_for_Count.setAttribute("class", "count_items");
@@ -334,7 +326,7 @@ let counter = 0;
 const Additems = () => {
   let item_name = document.getElementsByClassName("product_name");
   let var1 = document.getElementsByClassName("inp");
-  
+
   let prices = [];
   for (let i = 0; i < item_name.length; i++) {
     let arr_items = [{}];
@@ -343,16 +335,15 @@ const Additems = () => {
       Price: var1[i].value,
       Count: 0,
     });
-    countOfItem[i].innerHTML = 0
+    countOfItem[i].innerHTML = 0;
     countOfItem[i].style.display = "inline-block";
-    $(document).ready(function(){
-      $('#icon').click(function(){
-        arr_items[i].count+=1
+    $(document).ready(function () {
+      $("#icon").click(function () {
+        arr_items[i].count += 1;
 
-        countOfItem[i].innerHTML=arr_items[0].Count
-
-      })
-    })
+        countOfItem[i].innerHTML = arr_items[0].Count;
+      });
+    });
 
     prices.push(var1[i].value);
     // let result = prices[i] * counter;
