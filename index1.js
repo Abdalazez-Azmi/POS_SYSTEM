@@ -312,31 +312,27 @@ let counter = 0;
 const Additems = () => {
   let item_name = document.getElementsByClassName("product_name");
   let var1 = document.getElementsByClassName("inp");
+
   let prices = [];
-  counter++;
   for (let i = 0; i < item_name.length; i++) {
     countOfItem[i].style.display = "inline-block";
-    
     let arr_items = [{}];
-    
-    arr_items[i]=({"name":item_name[i].innerHTML,"Count":0})
-    
-    
+    arr_items.push({
+      name: item_name[i].innerHTML,
+      Price: var1[i].value,
+      Count: 0,
+    });
+    countOfItem[i].innerHTML = arr_items[i].Count;
+
+    prices.push(var1[i].value);
+    // let result = prices[i] * counter;
+    // products_total.value = result;
   }
 
-
-
-  console.log(arr_items);
-  countOfItem[i].innerHTML = counter;
-
-  prices.push(var1[i].value);
-  let result = prices[i] * counter;
-  products_total.value = result;
-
-  localStorage.setItem("prices", prices);
-  localStorage.setItem("result", result);
-  localStorage.setItem("item_name", item_name[i].innerHTML);
-  localStorage.setItem("counter", counter);
+  // localStorage.setItem("prices", prices);
+  // localStorage.setItem("result", result);
+  // localStorage.setItem("item_name", item_name[i].innerHTML);
+  // localStorage.setItem("counter", counter);
   // console.log(item_name[i].innerHTML);
 };
 
@@ -398,11 +394,10 @@ const main_table_of_products = () => {
       let prices = localStorage.getItem("prices");
       console.log(prices[0] * cell2.innerHTML);
       for (let i = 0; i < prices.length; i++) {
-        cell3.innerHTML = prices[0] * cell2.innerHTML;
+        cell3.innerHTML = prices[20] * cell2.innerHTML;
       }
     });
   });
-
   customer_money();
 };
 
