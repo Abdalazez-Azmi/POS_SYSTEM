@@ -75,17 +75,6 @@ if (sec_div.style.display !== 'none') {
 
 
 
-$(document).ready(function () {
-  var iframeWindow = document.getElementById("my-iframe-id").contentWindow;
-
-  iframeWindow.addEventListener("load", function () {
-    var doc = iframe.contentDocument || iframe.contentWindow.document;
-    var target = doc.getElementById("my-target-id");
-
-    target.innerHTML = "Found it!";
-  });
-});
-
 const product_info = () => {
   let row = table_add_product.insertRow();
   let cell1 = row.insertCell();
@@ -156,14 +145,20 @@ const product_info = () => {
 
   // chosen_file.replaceChild(window.location.pathname)
   // img_src.push()
+
+
+
+  console.log(chosen_file.value)
   let slash = chosen_file.value.slice(2, 3);
 
   let sources = chosen_file.value.replace(
     "fakepath",
-    "Users" + slash + "Oracle" + slash + "Desktop"
+    "Users" + slash + "Oracle" + slash + "Desktop" + slash + "POS_SYSTEM" + slash + "Add_new_Products" 
   );
+  // let sources = chosen_file.value.replace(
+  //   "fakepath","Add_new_Products"
+  // );
 
-  // let sources = chosen_file.value.replace('fakepath','Desktop')
 
   console.log(sources);
 
@@ -177,12 +172,12 @@ const product_info = () => {
   main_div.appendChild(img_for_product);
   let secound_div = document.createElement("div");
   main_div.appendChild(secound_div);
-  let icon_img = document.createElement("img");
-  icon_img.setAttribute("onclick", "Additems()");
-  icon_img.setAttribute("class", "icon");
-  icon_img.setAttribute("id", "icon");
-  icon_img.setAttribute("src", "Icons/add-icon.svg");
-  secound_div.appendChild(icon_img);
+  let span = document.createElement("span");
+  span.setAttribute("onclick", "Additems()");
+  span.setAttribute("class", "icon");
+  span.setAttribute("id", "icon");
+  span.innerHTML='+'
+  secound_div.appendChild(span);
   let span_for_Count = document.createElement("span");
   span_for_Count.setAttribute("class", "count_items");
   secound_div.appendChild(span_for_Count);
