@@ -1,6 +1,9 @@
 let add_items = document.getElementById("icon");
+let products_animate = document.getElementsByClassName('final')
+let main_content = document.getElementsByClassName('d-1')
 let products_total = document.getElementById("total");
 let main_Total = document.getElementById("main_Total");
+let f_p=document.getElementsByClassName('f-p')
 let stat_1 = document.getElementById("status");
 let tag4 = document.getElementById("tag4");
 let countOfItem = document.getElementsByClassName("count_items");
@@ -237,6 +240,56 @@ const product_info = () => {
 
   add_accounts();
 };
+
+
+
+
+
+
+
+
+
+
+
+window.onload= $(document).ready(function(){
+
+  for (let i = 0; i < f_p.length; i++) {
+    $(f_p[i]).toggle()
+    $(f_p[i]).toggle(4000)
+    
+  }
+})
+
+
+
+
+
+window.onload= $(document).ready(function(){
+
+  for (let i = 0; i < main_content.length; i++) {
+    $(main_content[i]).toggle()
+    $(main_content[i]).toggle(4000)
+    
+  }
+})
+
+window.onload= $(document).ready(function(){
+
+  for (let i = 0; i < products_animate.length; i++) {
+    $(products_animate[i]).fadeOut()
+    $(products_animate[i]).fadeIn(3000)
+    
+  }
+})
+
+
+
+
+
+
+
+
+
 const add_accounts = () => {
   if (Accounts.innerHTML === "Show Information") {
     main_div.style.display = "none";
@@ -355,13 +408,11 @@ const Additems = () => {
     });
     countOfItem[i].innerHTML = 0;
     countOfItem[i].style.display = "inline-block";
-    $(document).ready(function () {
-      $("#icon").click(function () {
-        arr_items[i].count += 1;
+    
+        arr_items[i].onclick = counter++
 
-        countOfItem[i].innerHTML = arr_items[0].Count;
-      });
-    });
+        // countOfItem[i].innerHTML = arr_items[0].Count;
+    
 
     prices.push(var1[i].value);
     // let result = prices[i] * counter;
