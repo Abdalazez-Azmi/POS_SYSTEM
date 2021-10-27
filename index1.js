@@ -264,6 +264,7 @@ window.onload= $(document).ready(function(){
 
 
 
+
 window.onload= $(document).ready(function(){
 
   for (let i = 0; i < main_content.length; i++) {
