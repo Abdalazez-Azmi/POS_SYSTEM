@@ -407,10 +407,25 @@ const Additems = () => {
       Price: var1[i].value,
       Count: 0,
     });
-    countOfItem[i].innerHTML = 0;
+for (const key of arr_items) {
+  countOfItem[i].innerHTML = key.Count
+  console.log(key)+
+  
+
+
+
+}
+
+
+
+
+
+
+
+
+
     countOfItem[i].style.display = "inline-block";
     
-        arr_items[i].onclick = counter++
 
         // countOfItem[i].innerHTML = arr_items[0].Count;
     
