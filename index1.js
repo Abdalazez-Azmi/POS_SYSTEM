@@ -276,8 +276,8 @@ window.onload= $(document).ready(function(){
 window.onload= $(document).ready(function(){
 
   for (let i = 0; i < products_animate.length; i++) {
-    $(products_animate[i]).fadeOut()
-    $(products_animate[i]).fadeIn(3000)
+    $(products_animate[i]).toggle()
+    $(products_animate[i]).toggle(4000)
     
   }
 })

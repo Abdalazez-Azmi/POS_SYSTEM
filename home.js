@@ -61,15 +61,15 @@ const login = () => {
 
 window.onload= $(document).ready(function(){
 let login= document.getElementById('login')
-    $(login).fadeOut(1)
-    $(login).fadeIn(2000)
+    $(login).animate()
+    $(login).animate(5000)
     
   }
 )
 window.onload= $(document).ready(function(){
 let sign_in= document.getElementById('sign in')
-    $(sign_in).fadeOut(1)
-    $(sign_in).fadeIn(2000)
+    $(sign_in).toggle(1)
+    $(sign_in).toggle(2000)
     
   }
 )
