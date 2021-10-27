@@ -273,15 +273,15 @@ window.onload= $(document).ready(function(){
   }
 })
 
-window.onload= $(document).ready(function(){
+// window.onload= $(document).ready(function(){
 
-  for (let i = 0; i < products_animate.length; i++) {
-    $(products_animate[i]).hide()
-    $(products_animate[i]).show(10000)
+//   for (let i = 0; i < products_animate.length; i++) {
+//     $(products_animate[i]).hide()
+//     $(products_animate[i]).show(10000)
 
     
-  }
-})
+//   }
+// })
 
 
 
@@ -406,10 +406,25 @@ const Additems = () => {
       Price: var1[i].value,
       Count: 0,
     });
-    countOfItem[i].innerHTML = 0;
+for (const key of arr_items) {
+  countOfItem[i].innerHTML = key.Count
+  console.log(key)+
+  
+
+
+
+}
+
+
+
+
+
+
+
+
+
     countOfItem[i].style.display = "inline-block";
     
-        arr_items[i].onclick = counter++
 
         // countOfItem[i].innerHTML = arr_items[0].Count;
     
