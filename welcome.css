@@ -82,7 +82,6 @@ input::-webkit-inner-spin-button {
 .a-tag {
   background-color: rgb(255, 255, 255);
   padding: 10px;
-  border-radius: 15px;
   font-weight: bold;
 }
 
