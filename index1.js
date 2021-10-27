@@ -352,7 +352,6 @@ let e_1 = document.getElementsByClassName("e_1");
 //   http.send();
 // };
 
-// let e_1 = document.getElementsByClassName('e_1')
 
 const darkmode = () => {
   let darkmode = document.getElementById("darkmode");
