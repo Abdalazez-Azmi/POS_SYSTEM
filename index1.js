@@ -133,32 +133,29 @@ const product_info = () => {
   // img_src.push()
 
   console.log(chosen_file.value);
-  let slash = chosen_file.value.slice(2, 3);
+  let slash = chosen_file.value.slice(11);
+  console.log(slash)
 
-  let sources = chosen_file.value.replace(
-    "fakepath",
-    "Users" +
-      slash +
-      "Oracle" +
-      slash +
-      "Desktop" +
-      slash +
-      "POS_SYSTEM" +
-      slash +
-      "Add_new_Products"
-  );
   // let sources = chosen_file.value.replace(
-  //   "fakepath","Add_new_Products"
+  //   "fakepath",
+  //   "Users" +
+  //     slash +
+  //     "Oracle" +
+  //     slash +
+  //     "Desktop" +
+  //     slash +
+  //     "POS_SYSTEM" +
+  //     slash +
+  //     "Add_new_Products"
   // );
-
-  console.log(sources);
+  
 
   let parent_of_div = document.getElementById("imgs-1");
   let main_div = document.createElement("div");
   main_div.setAttribute("class", "final");
   parent_of_div.appendChild(main_div);
   let img_for_product = document.createElement("img");
-  img_for_product.setAttribute("src", sources); /////////////////////
+  img_for_product.setAttribute("src",`Add_new_Products/${slash} `); /////////////////////
 
   main_div.appendChild(img_for_product);
   let secound_div = document.createElement("div");
@@ -267,18 +264,40 @@ const add_accounts = () => {
 
 let e_1 = document.getElementsByClassName("e_1");
 
-window.onload = function () {
-  var http = new XMLHttpRequest();
 
-  http.onreadystatechange = function () {
-    if (http.readyState == 4 && http.status == 200) {
-      let data = JSON.stringify(http.response);
-      console.log(data);
-    }
-  };
-  http.open("GET", "http://localhost:5502/", true);
-  http.send();
-};
+// window.onload = function () {
+//   var http = new XMLHttpRequest();
+
+//   http.onreadystatechange = function () {
+//     if (http.readyState == 4 && http.status == 200) {
+//       let data = JSON.stringify(http.response);
+//       let data_split = data.split("");
+//       for (let i = 0; i < data_split.length; i++) {
+//         if (
+//           data_split[i] !== "{" &&
+//           "/" &&
+//           "}" &&
+//           "metaData" &&
+//           "rows" &&
+//           "<" &&
+//           ">" &&
+//           "=" &&
+//           ";" &&
+//           "[" &&
+//           "]" &&
+//           "'" &&
+//           '"'
+//         ) {
+//           let filter = data_split[i];
+//           filter.split("");
+//           console.log(filter);
+//         }
+//       }
+//     }
+//   };
+//   http.open("GET", "http://localhost:5502/", true);
+//   http.send();
+// };
 
 // let e_1 = document.getElementsByClassName('e_1')
 
