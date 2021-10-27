@@ -319,12 +319,13 @@ const add_accounts = () => {
 let e_1 = document.getElementsByClassName("e_1");
 
 
-// window.onload = function () {
-//   var http = new XMLHttpRequest();
+window.onload = function () {
+  var http = new XMLHttpRequest();
 
-//   http.onreadystatechange = function () {
-//     if (http.readyState == 4 && http.status == 200) {
-//       let data = JSON.stringify(http.response);
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 200) {
+      let data = JSON.stringify(http.response);
+      console.log(data)
 //       let data_split = data.split("");
 //       for (let i = 0; i < data_split.length; i++) {
 //         if (
@@ -347,11 +348,46 @@ let e_1 = document.getElementsByClassName("e_1");
 //           console.log(filter);
 //         }
 //       }
-//     }
-//   };
-//   http.open("GET", "http://localhost:5502/", true);
-//   http.send();
-// };
+    }
+  };
+  http.open("GET", "http://localhost:5502/", true);
+  http.send();
+};
+
+window.onload = function () {
+  var http = new XMLHttpRequest();
+
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 200) {
+      let data = JSON.stringify(http.response);
+      console.log(data)
+//       let data_split = data.split("");
+//       for (let i = 0; i < data_split.length; i++) {
+//         if (
+//           data_split[i] !== "{" &&
+//           "/" &&
+//           "}" &&
+//           "metaData" &&
+//           "rows" &&
+//           "<" &&
+//           ">" &&
+//           "=" &&
+//           ";" &&
+//           "[" &&
+//           "]" &&
+//           "'" &&
+//           '"'
+//         ) {
+//           let filter = data_split[i];
+//           filter.split("");
+//           console.log(filter);
+//         }
+//       }
+    }
+  };
+  http.open("GET", "http://localhost:5502/", true);
+  http.send();
+};
 
 
 const darkmode = () => {
