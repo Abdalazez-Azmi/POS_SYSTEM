@@ -26,8 +26,7 @@ const rigister = () => {
   }
 };
 
-window.onload = function () {
-  $(document).ready(function () {
+window.onload = $(document).ready(function () {
     $("#hide").click(function () {
       login_password.setAttribute("type", "text");
     });
@@ -35,7 +34,7 @@ window.onload = function () {
       login_password.setAttribute("type", "password");
     });
   });
-};
+
 const login = () => {
   let href_login = document.getElementById("href_login");
   let Global_username = localStorage.getItem("username");

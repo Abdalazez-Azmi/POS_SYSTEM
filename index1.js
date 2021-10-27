@@ -276,8 +276,9 @@ window.onload= $(document).ready(function(){
 window.onload= $(document).ready(function(){
 
   for (let i = 0; i < products_animate.length; i++) {
-    $(products_animate[i]).toggle()
-    $(products_animate[i]).toggle(4000)
+    $(products_animate[i]).hide()
+    $(products_animate[i]).show(10000)
+
     
   }
 })
@@ -604,9 +605,11 @@ const insert_supplier = () => {
   cell2.innerHTML = input_for_suppliers[1].value;
   cell3.innerHTML = input_for_suppliers[2].value;
 };
+
+
 const customer_money = () => {
   main_Total.value = localStorage.getItem("result");
-  cust_give_you.value = 2;
+  cust_give_you.value = 10;
   give_cust.value = cust_give_you.value - main_Total.value;
 };
 
