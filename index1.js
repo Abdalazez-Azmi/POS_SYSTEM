@@ -319,13 +319,58 @@ const add_accounts = () => {
 let e_1 = document.getElementsByClassName("e_1");
 
 
-window.onload = function () {
+const db_1= ()=> {
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
       let data = JSON.stringify(http.response);
       console.log(data)
+       let data_slice = data.slice(204,289)
+       console.log(data_slice)
+       let employee_id= data_slice.slice(0,1)
+      //  console.log(employee_id)
+       let first_name = data_slice.slice(4,8)
+      //  console.log(first_name)
+       let last_name = data_slice.slice(13,18)
+// console.log(last_name)
+let salary = data_slice.slice(21,25)
+// console.log(salary)
+let Address = data_slice.slice(28,44)
+// console.log(Address)
+let hire_date = data_slice.slice(49,59)
+// console.log(hire_date)
+let phone_number = data_slice.slice(76,88)
+// console.log(phone_number)
+let result = []
+result.push(employee_id,first_name,last_name,salary,Address,hire_date,phone_number)
+
+
+for (let i = 0; i < employee_input.length; i++) {
+employee_input[i].value=result[i]
+  
+
+}  
+
+
+
+
+
+
+
+    }
+  };
+  http.open("GET", "http://localhost:5502/", true);
+  http.send();
+};
+
+// window.onload = function () {
+//   var http = new XMLHttpRequest();
+
+//   http.onreadystatechange = function () {
+//     if (http.readyState == 4 && http.status == 200) {
+//       let data = JSON.stringify(http.response);
+//       console.log(data)
 //       let data_split = data.split("");
 //       for (let i = 0; i < data_split.length; i++) {
 //         if (
@@ -348,46 +393,11 @@ window.onload = function () {
 //           console.log(filter);
 //         }
 //       }
-    }
-  };
-  http.open("GET", "http://localhost:5502/", true);
-  http.send();
-};
-
-window.onload = function () {
-  var http = new XMLHttpRequest();
-
-  http.onreadystatechange = function () {
-    if (http.readyState == 4 && http.status == 200) {
-      let data = JSON.stringify(http.response);
-      console.log(data)
-//       let data_split = data.split("");
-//       for (let i = 0; i < data_split.length; i++) {
-//         if (
-//           data_split[i] !== "{" &&
-//           "/" &&
-//           "}" &&
-//           "metaData" &&
-//           "rows" &&
-//           "<" &&
-//           ">" &&
-//           "=" &&
-//           ";" &&
-//           "[" &&
-//           "]" &&
-//           "'" &&
-//           '"'
-//         ) {
-//           let filter = data_split[i];
-//           filter.split("");
-//           console.log(filter);
-//         }
-//       }
-    }
-  };
-  http.open("GET", "http://localhost:5502/", true);
-  http.send();
-};
+//     }
+//   };
+//   http.open("GET", "http://localhost:5502/", true);
+//   http.send();
+// };
 
 
 const darkmode = () => {
