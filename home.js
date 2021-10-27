@@ -7,8 +7,12 @@ let login_password = document.getElementById("login_password");
 let tag_of_href = document.getElementById("tag_of_href");
 let hide = document.getElementById("hide");
 const rigister = () => {
-  status_of_rigister.style.display = "block";
   if (input_for_id.value.length < 4 || input_for_pass.value.length < 4) {
+
+    $(document).ready(function(){
+      $(status_of_rigister).toggle(1000)
+
+    })
     status_of_rigister.innerText =
       "Sorry please enter email or password greater than 3";
   } else {
@@ -33,7 +37,6 @@ window.onload = function () {
   });
 };
 const login = () => {
-  status_of_login.style.display = "block";
   let href_login = document.getElementById("href_login");
   let Global_username = localStorage.getItem("username");
   let Global_password = localStorage.getItem("password");
@@ -42,9 +45,31 @@ const login = () => {
     login_username.value !== Global_username ||
     login_password.value !== Global_password
   ) {
+    $(document).ready(function(){
+      $(status_of_login).toggle(1000)
+
+    })
     status_of_login.innerHTML = "Sorry! Email Or Password Does Not Correct";
+
   } else {
     status_of_login.innerHTML = "Welcome To Point of sale system";
     href_login.href = "index.html";
   }
 };
+
+
+
+window.onload= $(document).ready(function(){
+let login= document.getElementById('login')
+    $(login).fadeOut(1)
+    $(login).fadeIn(2000)
+    
+  }
+)
+window.onload= $(document).ready(function(){
+let sign_in= document.getElementById('sign in')
+    $(sign_in).fadeOut(1)
+    $(sign_in).fadeIn(2000)
+    
+  }
+)
