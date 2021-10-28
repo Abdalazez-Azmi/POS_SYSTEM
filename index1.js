@@ -48,10 +48,14 @@ let value_of_supplier = document.getElementById("value_of_supplier");
 //     const url= (`http://${document.domain}:${protocol}${page}`)
 // console.log(url)
 // if (page === '/emp_manag.html') {
-//  5 > 5
+//   window.location.host = 5503
+// }else if(page === '/SearchProduct.html'){
+//   protocol = 5504
+// }
+// protocol = 5502
 // }
 
-// })
+// )
 
 const remove = () => {
   let list_of_td = td.children;
@@ -75,56 +79,70 @@ const show_data = () => {
   }
 };
 
-const db_4 = () => {
+
+
+const db_Products = () => {
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
       let data = JSON.parse(this.response);
-      // employee_input[i].value=data.rows[0][i]
-      // console.log(data.rows[0])
-      console.log(data.rows);
-      // for (let i = 0; i < data.rows.length; i++) {
+      for (let i = 0; i < data.rows.length; i++) {
+        // employee_input[i].value=data.rows[0][i]
+        // console.log(data.rows[0])
 
-        // console.log(data.rows.length)
+        let row = table_add_product.insertRow();
+  let cell1 = row.insertCell();
+  let cell2 = row.insertCell();
+  let cell3 = row.insertCell();
+  let cell4 = row.insertCell();
+  let cell5 = row.insertCell();
+  let cell6 = row.insertCell();
+  let cell7 = row.insertCell();
+  let cell8 = row.insertCell();
+  let cell9 = row.insertCell();
+  let minus = document.createElement("button");
+  minus.innerHTML = "X";
+  minus.setAttribute("id", "crud");
+  cell9.append(minus);
+  let remove_count = document.createElement("button");
+  remove_count.innerHTML = "-";
+  remove_count.setAttribute("id", "remove_count");
+  let Add_count = document.createElement("button");
+  Add_count.innerHTML = "+";
+  Add_count.setAttribute("id", "Add_count");
+  Add_count.setAttribute("class", "crud+");
+  remove_count.setAttribute("class", "crud");
+  cell7.append(Add_count);
+  cell8.append(remove_count);
+  cell1.innerHTML = data.rows[i][0]
+  cell2.innerHTML = data.rows[i][1]
+  cell3.innerHTML = data.rows[i][2]
+  cell4.innerHTML = data.rows[i][3]
+  cell5.innerHTML = data.rows[i][4]
+  cell6.innerHTML = cell2.innerHTML * cell3.innerHTML;
 
-        // let row = table_add_product.insertRow();
-        // let cell1 = row.insertCell();
-        // let cell2 = row.insertCell();
-        // let cell3 = row.insertCell();
-        // let cell4 = row.insertCell();
-        // let cell5 = row.insertCell();
-        // let cell7 = row.insertCell();
-        // let cell8 = row.insertCell();
-        // let cell9 = row.insertCell();
-        // let minus = document.createElement("button");
-        // minus.innerHTML = "X";
-        // minus.setAttribute("id", "crud");
-        // cell9.append(minus);
-        // let remove_count = document.createElement("button");
-        // remove_count.innerHTML = "-";
-        // remove_count.setAttribute("id", "remove_count");
-        // let Add_count = document.createElement("button");
-        // Add_count.innerHTML = "+";
-        // Add_count.setAttribute("id", "Add_count");
-        // Add_count.setAttribute("class", "crud+");
-        // remove_count.setAttribute("class", "crud");
-        // cell7.append(Add_count);
-        // cell8.append(remove_count);
 
-        // cell1.innerHTML = data.rows[i][0];
-        // cell2.innerHTML = data.rows[i][1];
-        // cell3.innerHTML = data.rows[i][2];
-        // cell4.innerHTML = data.rows[i][3];
-        // cell5.innerHTML = data.rows[i][4];
-      // }
+
+
+
+
+
+      }
     }
-    http.open("GET", "http://localhost:5502/", true);
-    http.send();
   };
-
+  http.open("GET", "http://localhost:5502/", true);
+  http.send();
   console.log("There is ERROR");
 };
+
+
+
+
+
+
+
+
 
 const product_info = () => {
   let row = table_add_product.insertRow();
@@ -350,11 +368,12 @@ const add_accounts = () => {
 
 let e_1 = document.getElementsByClassName("e_1");
 
-const db_1 = () => {
+const db_employees = () => {
   
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function () {
+    console.log(this.response)
     if (http.readyState == 4 && http.status == 200) {
       let data = JSON.parse(this.response);
       for (let i = 0; i < data.rows.length; i++) {
@@ -426,7 +445,15 @@ const db_1 = () => {
   console.log("There is ERROR");
 };
 
-const db_3 = () => {
+
+
+
+
+
+
+
+
+const db_Suppliers = () => {
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function () {
