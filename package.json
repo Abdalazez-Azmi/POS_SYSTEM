@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nodemon Oracle_Database_connection.js",
     "dev2":" nodemon Oracle.js",
+    "dev3":" nodemon Oracle3.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

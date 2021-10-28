@@ -1,9 +1,9 @@
 let add_items = document.getElementById("icon");
-let products_animate = document.getElementsByClassName('final')
-let main_content = document.getElementsByClassName('d-1')
+let products_animate = document.getElementsByClassName("final");
+let main_content = document.getElementsByClassName("d-1");
 let products_total = document.getElementById("total");
 let main_Total = document.getElementById("main_Total");
-let f_p=document.getElementsByClassName('f-p')
+let f_p = document.getElementsByClassName("f-p");
 let stat_1 = document.getElementById("status");
 let tag4 = document.getElementById("tag4");
 let countOfItem = document.getElementsByClassName("count_items");
@@ -51,24 +51,7 @@ let value_of_supplier = document.getElementById("value_of_supplier");
 //  5 > 5
 // }
 
-
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const remove = () => {
   let list_of_td = td.children;
@@ -90,6 +73,57 @@ const show_data = () => {
     sec_div.style.display = "block";
     show.innerHTML = "Hide Data";
   }
+};
+
+const db_4 = () => {
+  var http = new XMLHttpRequest();
+
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 200) {
+      let data = JSON.parse(this.response);
+      // employee_input[i].value=data.rows[0][i]
+      // console.log(data.rows[0])
+      for (let i = 0; i < data.rows.length; i++) {
+        console.log(data.rows);
+
+        // console.log(data.rows.length)
+
+        let row = table_add_product.insertRow();
+        let cell1 = row.insertCell();
+        let cell2 = row.insertCell();
+        let cell3 = row.insertCell();
+        let cell4 = row.insertCell();
+        let cell5 = row.insertCell();
+        let cell7 = row.insertCell();
+        let cell8 = row.insertCell();
+        let cell9 = row.insertCell();
+        let minus = document.createElement("button");
+        minus.innerHTML = "X";
+        minus.setAttribute("id", "crud");
+        cell9.append(minus);
+        let remove_count = document.createElement("button");
+        remove_count.innerHTML = "-";
+        remove_count.setAttribute("id", "remove_count");
+        let Add_count = document.createElement("button");
+        Add_count.innerHTML = "+";
+        Add_count.setAttribute("id", "Add_count");
+        Add_count.setAttribute("class", "crud+");
+        remove_count.setAttribute("class", "crud");
+        cell7.append(Add_count);
+        cell8.append(remove_count);
+
+        cell1.innerHTML = data.rows[i][0];
+        cell2.innerHTML = data.rows[i][1];
+        cell3.innerHTML = data.rows[i][2];
+        cell4.innerHTML = data.rows[i][3];
+        cell5.innerHTML = data.rows[i][4];
+      }
+    }
+    http.open("GET", "http://localhost:5502/", true);
+    http.send();
+  };
+
+  console.log("There is ERROR");
 };
 
 const product_info = () => {
@@ -163,9 +197,9 @@ const product_info = () => {
   // chosen_file.replaceChild(window.location.pathname)
   // img_src.push()
 
-  console.log(chosen_file.value);
+  // console.log(chosen_file.value);
   let slash = chosen_file.value.slice(11);
-  console.log(slash)
+  // console.log(slash)
 
   // let sources = chosen_file.value.replace(
   //   "fakepath",
@@ -179,14 +213,13 @@ const product_info = () => {
   //     slash +
   //     "Add_new_Products"
   // );
-  
 
   let parent_of_div = document.getElementById("imgs-1");
   let main_div = document.createElement("div");
   main_div.setAttribute("class", "final");
   parent_of_div.appendChild(main_div);
   let img_for_product = document.createElement("img");
-  img_for_product.setAttribute("src",`Add_new_Products/${slash} `); /////////////////////
+  img_for_product.setAttribute("src", `Add_new_Products/${slash} `); /////////////////////
 
   main_div.appendChild(img_for_product);
   let secound_div = document.createElement("div");
@@ -269,55 +302,26 @@ const product_info = () => {
   add_accounts();
 };
 
-
-
-
-
-
-
-
-
-
-
-window.onload= $(document).ready(function(){
-
+window.onload = $(document).ready(function () {
   for (let i = 0; i < f_p.length; i++) {
-    $(f_p[i]).toggle()
-    $(f_p[i]).toggle(4000)
-    
+    $(f_p[i]).toggle();
+    $(f_p[i]).toggle(4000);
   }
-})
+});
 
-
-
-
-
-window.onload= $(document).ready(function(){
-
+window.onload = $(document).ready(function () {
   for (let i = 0; i < main_content.length; i++) {
-    $(main_content[i]).toggle()
-    $(main_content[i]).toggle(4000)
-    
+    $(main_content[i]).toggle();
+    $(main_content[i]).toggle(4000);
   }
-})
+});
 
-window.onload= $(document).ready(function(){
-
+window.onload = $(document).ready(function () {
   for (let i = 0; i < products_animate.length; i++) {
-    $(products_animate[i]).hide()
-    $(products_animate[i]).show(10000)
-
-    
+    $(products_animate[i]).hide();
+    $(products_animate[i]).show(10000);
   }
-})
-
-
-
-
-
-
-
-
+});
 
 const add_accounts = () => {
   if (Accounts.innerHTML === "Show Information") {
@@ -346,336 +350,106 @@ const add_accounts = () => {
 
 let e_1 = document.getElementsByClassName("e_1");
 
-
-const db_1= ()=> {
+const db_1 = () => {
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
-      let data = JSON.parse(this.response)
-      for (let i = 0; i < data.rows.length ; i++) {
+      let data = JSON.parse(this.response);
+      for (let i = 0; i < data.rows.length; i++) {
         // employee_input[i].value=data.rows[0][i]
-        console.log(data.rows[0])
+        // console.log(data.rows[0])
 
+        let row = table_of_employees_managment.insertRow();
+        let cell1 = row.insertCell();
+        let cell2 = row.insertCell();
+        let cell3 = row.insertCell();
+        let cell4 = row.insertCell();
+        let cell5 = row.insertCell();
+        let cell6 = row.insertCell();
+        let cell7 = row.insertCell();
+        let cell8 = row.insertCell();
+        let remove_btn = document.createElement("button");
+        remove_btn.setAttribute("id", "remove_btn");
+        remove_btn.innerHTML = "-";
 
+        cell1.innerHTML = data.rows[i][0];
+        cell2.innerHTML = data.rows[i][1];
+        cell3.innerHTML = data.rows[i][2];
+        cell4.innerHTML = data.rows[i][3];
+        cell5.innerHTML = data.rows[i][4];
+        cell6.innerHTML = data.rows[i][5];
+        cell7.innerHTML = data.rows[i][6];
+        cell8.append(remove_btn);
 
+        let cells = remove_btn.parentElement.parentElement;
+        $(document).ready(function () {
+          $(cells.lastChild).click(function () {
+            cells.remove();
 
-let row = table_of_employees_managment.insertRow();
-let cell1 = row.insertCell();
-let cell2 = row.insertCell();
-let cell3 = row.insertCell();
-let cell4 = row.insertCell();
-let cell5 = row.insertCell();
-let cell6 = row.insertCell();
-let cell7 = row.insertCell();
-let cell8 = row.insertCell();
-let remove_btn = document.createElement("button");
-remove_btn.setAttribute("id", "remove_btn");
-remove_btn.innerHTML = "-";
+            let row1 = emp_leaved.insertRow();
+            let cel1 = row1.insertCell();
+            let cel2 = row1.insertCell();
+            let cel3 = row1.insertCell();
+            let cel4 = row1.insertCell();
+            let cel5 = row1.insertCell();
+            let cel6 = row1.insertCell();
+            let cel7 = row1.insertCell();
+            let cel8 = row1.insertCell();
+            let remove_btn1 = document.createElement("button");
+            remove_btn1.setAttribute("id", "remove_btn1");
+            remove_btn1.innerHTML = "-";
 
-cell1.innerHTML = data.rows[i][0]
-cell2.innerHTML = data.rows[i][1]
-cell3.innerHTML =  data.rows[i][2]
-cell4.innerHTML =  data.rows[i][3]
-cell5.innerHTML =  data.rows[i][4]
-cell6.innerHTML =  data.rows[i][5]
-cell7.innerHTML = data.rows[i][6]
-cell8.append(remove_btn);
+            cel1.innerHTML = data.rows[i][0];
+            cel2.innerHTML = data.rows[i][1];
+            cel3.innerHTML = data.rows[i][2];
+            cel4.innerHTML = data.rows[i][3];
+            cel5.innerHTML = data.rows[i][4];
+            cel6.innerHTML = data.rows[i][5];
+            cel7.innerHTML = data.rows[i][6];
+            cel8.append(remove_btn1);
 
-let cells = remove_btn.parentElement.parentElement;
-$(document).ready(function () {
-  $(cells.lastChild).click(function () {
-    cells.remove();
-
-    let row1 = emp_leaved.insertRow();
-    let cel1 = row1.insertCell();
-    let cel2 = row1.insertCell();
-    let cel3 = row1.insertCell();
-    let cel4 = row1.insertCell();
-    let cel5 = row1.insertCell();
-    let cel6 = row1.insertCell();
-    let cel7 = row1.insertCell();
-    let cel8 = row1.insertCell();
-    let remove_btn1 = document.createElement("button");
-    remove_btn1.setAttribute("id", "remove_btn1");
-    remove_btn1.innerHTML = "-";
-
-    cel1.innerHTML = data.rows[i][0]
-    cel2.innerHTML = data.rows[i][1]
-    cel3.innerHTML = data.rows[i][2]
-    cel4.innerHTML = data.rows[i][3]
-    cel5.innerHTML = data.rows[i][4]
-    cel6.innerHTML = data.rows[i][5]
-    cel7.innerHTML = data.rows[i][6]
-    cel8.append(remove_btn1);
-
-
-
-
-
-
-
-
-
-    let main_of_tr = remove_btn1.parentElement.parentElement;
-    $(document).ready(function () {
-      $(main_of_tr.lastChild).click(function () {
-        main_of_tr.remove();
-      });
-    });
-  });
-});
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
+            let main_of_tr = remove_btn1.parentElement.parentElement;
+            $(document).ready(function () {
+              $(main_of_tr.lastChild).click(function () {
+                main_of_tr.remove();
+              });
+            });
+          });
+        });
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
   };
   http.open("GET", "http://localhost:5502/", true);
   http.send();
+  console.log("There is ERROR");
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const db_3= ()=> {
+const db_3 = () => {
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
-      let data = JSON.parse(this.response)
-      for (let i = 0; i < data.rows.length ; i++) {
+      let data = JSON.parse(this.response);
+      for (let i = 0; i < data.rows.length; i++) {
         // employee_input[i].value=data.rows[0][i]
-        console.log(data.rows[0])
+        // console.log(data.rows[0])
 
+        let row = suppliers.insertRow();
+        let cell1 = row.insertCell();
+        let cell2 = row.insertCell();
+        let cell3 = row.insertCell();
 
-
-
-let row = table_of_employees_managment.insertRow();
-let cell1 = row.insertCell();
-let cell2 = row.insertCell();
-let cell3 = row.insertCell();
-let cell4 = row.insertCell();
-let cell5 = row.insertCell();
-let cell6 = row.insertCell();
-let cell7 = row.insertCell();
-let cell8 = row.insertCell();
-let remove_btn = document.createElement("button");
-remove_btn.setAttribute("id", "remove_btn");
-remove_btn.innerHTML = "-";
-
-cell1.innerHTML = data.rows[i][0]
-cell2.innerHTML = data.rows[i][1]
-cell3.innerHTML =  data.rows[i][2]
-cell4.innerHTML =  data.rows[i][3]
-cell5.innerHTML =  data.rows[i][4]
-cell6.innerHTML =  data.rows[i][5]
-cell7.innerHTML = data.rows[i][6]
-cell8.append(remove_btn);
-
-let cells = remove_btn.parentElement.parentElement;
-$(document).ready(function () {
-  $(cells.lastChild).click(function () {
-    cells.remove();
-
-    let row1 = emp_leaved.insertRow();
-    let cel1 = row1.insertCell();
-    let cel2 = row1.insertCell();
-    let cel3 = row1.insertCell();
-    let cel4 = row1.insertCell();
-    let cel5 = row1.insertCell();
-    let cel6 = row1.insertCell();
-    let cel7 = row1.insertCell();
-    let cel8 = row1.insertCell();
-    let remove_btn1 = document.createElement("button");
-    remove_btn1.setAttribute("id", "remove_btn1");
-    remove_btn1.innerHTML = "-";
-
-    cel1.innerHTML = data.rows[i][0]
-    cel2.innerHTML = data.rows[i][1]
-    cel3.innerHTML = data.rows[i][2]
-    cel4.innerHTML = data.rows[i][3]
-    cel5.innerHTML = data.rows[i][4]
-    cel6.innerHTML = data.rows[i][5]
-    cel7.innerHTML = data.rows[i][6]
-    cel8.append(remove_btn1);
-
-
-
-
-
-
-
-
-
-    let main_of_tr = remove_btn1.parentElement.parentElement;
-    $(document).ready(function () {
-      $(main_of_tr.lastChild).click(function () {
-        main_of_tr.remove();
-      });
-    });
-  });
-});
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
+        cell1.innerHTML = data.rows[i][0];
+        cell2.innerHTML = data.rows[i][1];
+        cell3.innerHTML = data.rows[i][2];
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
   };
   http.open("GET", "http://localhost:5502/", true);
   http.send();
+  console.log("There is ERROR");
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const db_2= ()=> {
-  var http = new XMLHttpRequest();
-
-  http.onreadystatechange = function () {
-    if (http.readyState == 4 && http.status == 200) {
-      let data1 = JSON.stringify(http.response);
-      console.log(data1)
-      
-  };
-  http.open("GET", "http://localhost:5502/Suppliers.html", true);
-  http.send();
-}
-console.log(1)
-}
 
 const darkmode = () => {
   let darkmode = document.getElementById("darkmode");
@@ -731,11 +505,10 @@ const Additems = () => {
     });
     countOfItem[i].innerHTML = 0;
     countOfItem[i].style.display = "inline-block";
-    
-        arr_items[i].onclick = counter++
 
-        // countOfItem[i].innerHTML = arr_items[0].Count;
-    
+    arr_items[i].onclick = counter++;
+
+    // countOfItem[i].innerHTML = arr_items[0].Count;
 
     prices.push(var1[i].value);
     // let result = prices[i] * counter;
@@ -885,14 +658,6 @@ const insert_data = () => {
       cel7.innerHTML = employee_input[6].value;
       cel8.append(remove_btn1);
 
-
-
-
-
-
-
-
-
       let main_of_tr = remove_btn1.parentElement.parentElement;
       $(document).ready(function () {
         $(main_of_tr.lastChild).click(function () {
@@ -936,7 +701,6 @@ const insert_supplier = () => {
   cell2.innerHTML = input_for_suppliers[1].value;
   cell3.innerHTML = input_for_suppliers[2].value;
 };
-
 
 const customer_money = () => {
   main_Total.value = localStorage.getItem("result");
