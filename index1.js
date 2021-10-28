@@ -83,41 +83,41 @@ const db_4 = () => {
       let data = JSON.parse(this.response);
       // employee_input[i].value=data.rows[0][i]
       // console.log(data.rows[0])
-      for (let i = 0; i < data.rows.length; i++) {
-        console.log(data.rows);
+      console.log(data.rows);
+      // for (let i = 0; i < data.rows.length; i++) {
 
         // console.log(data.rows.length)
 
-        let row = table_add_product.insertRow();
-        let cell1 = row.insertCell();
-        let cell2 = row.insertCell();
-        let cell3 = row.insertCell();
-        let cell4 = row.insertCell();
-        let cell5 = row.insertCell();
-        let cell7 = row.insertCell();
-        let cell8 = row.insertCell();
-        let cell9 = row.insertCell();
-        let minus = document.createElement("button");
-        minus.innerHTML = "X";
-        minus.setAttribute("id", "crud");
-        cell9.append(minus);
-        let remove_count = document.createElement("button");
-        remove_count.innerHTML = "-";
-        remove_count.setAttribute("id", "remove_count");
-        let Add_count = document.createElement("button");
-        Add_count.innerHTML = "+";
-        Add_count.setAttribute("id", "Add_count");
-        Add_count.setAttribute("class", "crud+");
-        remove_count.setAttribute("class", "crud");
-        cell7.append(Add_count);
-        cell8.append(remove_count);
+        // let row = table_add_product.insertRow();
+        // let cell1 = row.insertCell();
+        // let cell2 = row.insertCell();
+        // let cell3 = row.insertCell();
+        // let cell4 = row.insertCell();
+        // let cell5 = row.insertCell();
+        // let cell7 = row.insertCell();
+        // let cell8 = row.insertCell();
+        // let cell9 = row.insertCell();
+        // let minus = document.createElement("button");
+        // minus.innerHTML = "X";
+        // minus.setAttribute("id", "crud");
+        // cell9.append(minus);
+        // let remove_count = document.createElement("button");
+        // remove_count.innerHTML = "-";
+        // remove_count.setAttribute("id", "remove_count");
+        // let Add_count = document.createElement("button");
+        // Add_count.innerHTML = "+";
+        // Add_count.setAttribute("id", "Add_count");
+        // Add_count.setAttribute("class", "crud+");
+        // remove_count.setAttribute("class", "crud");
+        // cell7.append(Add_count);
+        // cell8.append(remove_count);
 
-        cell1.innerHTML = data.rows[i][0];
-        cell2.innerHTML = data.rows[i][1];
-        cell3.innerHTML = data.rows[i][2];
-        cell4.innerHTML = data.rows[i][3];
-        cell5.innerHTML = data.rows[i][4];
-      }
+        // cell1.innerHTML = data.rows[i][0];
+        // cell2.innerHTML = data.rows[i][1];
+        // cell3.innerHTML = data.rows[i][2];
+        // cell4.innerHTML = data.rows[i][3];
+        // cell5.innerHTML = data.rows[i][4];
+      // }
     }
     http.open("GET", "http://localhost:5502/", true);
     http.send();
@@ -351,6 +351,7 @@ const add_accounts = () => {
 let e_1 = document.getElementsByClassName("e_1");
 
 const db_1 = () => {
+  
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function () {

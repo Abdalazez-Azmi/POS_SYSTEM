@@ -9,3 +9,23 @@ SELECT * FROM employees;
 
 
 commit;
+
+/*
+FOR SUPPLIERS TABLE
+/*/
+
+INSERT INTO SUPPLIERS VALUES('Hazem',79781543,'Chocolet');
+
+commit;
+
+/*
+THIS IS FOR Products
+
+
+/*/
+
+SELECT * FROM PRODUCTS;
+
+INSERT INTO PRODUCTS VALUES ('SNIKERS',0.40,24,0.50,SYSDATE);
+
+COMMIT;
