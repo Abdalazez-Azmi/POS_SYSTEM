@@ -98,7 +98,7 @@ async function selectEmployeesById(req, res, id) {
 }
 
 //get /employee?id=<id employee>
-app.get("/", function (req, res) {
+app.get("/Suppliers.html", function (req, res) {
   //get query param ?id
   let id = req.query.id;
   // id param if it is number

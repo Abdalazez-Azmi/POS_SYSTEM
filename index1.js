@@ -42,6 +42,34 @@ let refresh = document.getElementById("refresh");
 let chosen_file = document.getElementById("chosen_file");
 let value_of_supplier = document.getElementById("value_of_supplier");
 
+// window.onload=$(document).ready(function(){
+//   let protocol = 5502
+// page=  window.location.pathname
+//     const url= (`http://${document.domain}:${protocol}${page}`)
+// console.log(url)
+// if (page === '/emp_manag.html') {
+//  5 > 5
+// }
+
+
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const remove = () => {
   let list_of_td = td.children;
   let arr = [];
@@ -324,33 +352,104 @@ const db_1= ()=> {
 
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
-      let data = JSON.stringify(http.response);
-      console.log(data)
-       let data_slice = data.slice(204,289)
-       console.log(data_slice)
-       let employee_id= data_slice.slice(0,1)
-      //  console.log(employee_id)
-       let first_name = data_slice.slice(4,8)
-      //  console.log(first_name)
-       let last_name = data_slice.slice(13,18)
-// console.log(last_name)
-let salary = data_slice.slice(21,25)
-// console.log(salary)
-let Address = data_slice.slice(28,44)
-// console.log(Address)
-let hire_date = data_slice.slice(49,59)
-// console.log(hire_date)
-let phone_number = data_slice.slice(76,88)
-// console.log(phone_number)
-let result = []
-result.push(employee_id,first_name,last_name,salary,Address,hire_date,phone_number)
+      let data = JSON.parse(this.response)
+      for (let i = 0; i < data.rows.length ; i++) {
+        // employee_input[i].value=data.rows[0][i]
+        console.log(data.rows[0])
 
 
-for (let i = 0; i < employee_input.length; i++) {
-employee_input[i].value=result[i]
-  
 
-}  
+
+let row = table_of_employees_managment.insertRow();
+let cell1 = row.insertCell();
+let cell2 = row.insertCell();
+let cell3 = row.insertCell();
+let cell4 = row.insertCell();
+let cell5 = row.insertCell();
+let cell6 = row.insertCell();
+let cell7 = row.insertCell();
+let cell8 = row.insertCell();
+let remove_btn = document.createElement("button");
+remove_btn.setAttribute("id", "remove_btn");
+remove_btn.innerHTML = "-";
+
+cell1.innerHTML = data.rows[i][0]
+cell2.innerHTML = data.rows[i][1]
+cell3.innerHTML =  data.rows[i][2]
+cell4.innerHTML =  data.rows[i][3]
+cell5.innerHTML =  data.rows[i][4]
+cell6.innerHTML =  data.rows[i][5]
+cell7.innerHTML = data.rows[i][6]
+cell8.append(remove_btn);
+
+let cells = remove_btn.parentElement.parentElement;
+$(document).ready(function () {
+  $(cells.lastChild).click(function () {
+    cells.remove();
+
+    let row1 = emp_leaved.insertRow();
+    let cel1 = row1.insertCell();
+    let cel2 = row1.insertCell();
+    let cel3 = row1.insertCell();
+    let cel4 = row1.insertCell();
+    let cel5 = row1.insertCell();
+    let cel6 = row1.insertCell();
+    let cel7 = row1.insertCell();
+    let cel8 = row1.insertCell();
+    let remove_btn1 = document.createElement("button");
+    remove_btn1.setAttribute("id", "remove_btn1");
+    remove_btn1.innerHTML = "-";
+
+    cel1.innerHTML = data.rows[i][0]
+    cel2.innerHTML = data.rows[i][1]
+    cel3.innerHTML = data.rows[i][2]
+    cel4.innerHTML = data.rows[i][3]
+    cel5.innerHTML = data.rows[i][4]
+    cel6.innerHTML = data.rows[i][5]
+    cel7.innerHTML = data.rows[i][6]
+    cel8.append(remove_btn1);
+
+
+
+
+
+
+
+
+
+    let main_of_tr = remove_btn1.parentElement.parentElement;
+    $(document).ready(function () {
+      $(main_of_tr.lastChild).click(function () {
+        main_of_tr.remove();
+      });
+    });
+  });
+});
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -364,41 +463,219 @@ employee_input[i].value=result[i]
   http.send();
 };
 
-// window.onload = function () {
-//   var http = new XMLHttpRequest();
 
-//   http.onreadystatechange = function () {
-//     if (http.readyState == 4 && http.status == 200) {
-//       let data = JSON.stringify(http.response);
-//       console.log(data)
-//       let data_split = data.split("");
-//       for (let i = 0; i < data_split.length; i++) {
-//         if (
-//           data_split[i] !== "{" &&
-//           "/" &&
-//           "}" &&
-//           "metaData" &&
-//           "rows" &&
-//           "<" &&
-//           ">" &&
-//           "=" &&
-//           ";" &&
-//           "[" &&
-//           "]" &&
-//           "'" &&
-//           '"'
-//         ) {
-//           let filter = data_split[i];
-//           filter.split("");
-//           console.log(filter);
-//         }
-//       }
-//     }
-//   };
-//   http.open("GET", "http://localhost:5502/", true);
-//   http.send();
-// };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const db_3= ()=> {
+  var http = new XMLHttpRequest();
+
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 200) {
+      let data = JSON.parse(this.response)
+      for (let i = 0; i < data.rows.length ; i++) {
+        // employee_input[i].value=data.rows[0][i]
+        console.log(data.rows[0])
+
+
+
+
+let row = table_of_employees_managment.insertRow();
+let cell1 = row.insertCell();
+let cell2 = row.insertCell();
+let cell3 = row.insertCell();
+let cell4 = row.insertCell();
+let cell5 = row.insertCell();
+let cell6 = row.insertCell();
+let cell7 = row.insertCell();
+let cell8 = row.insertCell();
+let remove_btn = document.createElement("button");
+remove_btn.setAttribute("id", "remove_btn");
+remove_btn.innerHTML = "-";
+
+cell1.innerHTML = data.rows[i][0]
+cell2.innerHTML = data.rows[i][1]
+cell3.innerHTML =  data.rows[i][2]
+cell4.innerHTML =  data.rows[i][3]
+cell5.innerHTML =  data.rows[i][4]
+cell6.innerHTML =  data.rows[i][5]
+cell7.innerHTML = data.rows[i][6]
+cell8.append(remove_btn);
+
+let cells = remove_btn.parentElement.parentElement;
+$(document).ready(function () {
+  $(cells.lastChild).click(function () {
+    cells.remove();
+
+    let row1 = emp_leaved.insertRow();
+    let cel1 = row1.insertCell();
+    let cel2 = row1.insertCell();
+    let cel3 = row1.insertCell();
+    let cel4 = row1.insertCell();
+    let cel5 = row1.insertCell();
+    let cel6 = row1.insertCell();
+    let cel7 = row1.insertCell();
+    let cel8 = row1.insertCell();
+    let remove_btn1 = document.createElement("button");
+    remove_btn1.setAttribute("id", "remove_btn1");
+    remove_btn1.innerHTML = "-";
+
+    cel1.innerHTML = data.rows[i][0]
+    cel2.innerHTML = data.rows[i][1]
+    cel3.innerHTML = data.rows[i][2]
+    cel4.innerHTML = data.rows[i][3]
+    cel5.innerHTML = data.rows[i][4]
+    cel6.innerHTML = data.rows[i][5]
+    cel7.innerHTML = data.rows[i][6]
+    cel8.append(remove_btn1);
+
+
+
+
+
+
+
+
+
+    let main_of_tr = remove_btn1.parentElement.parentElement;
+    $(document).ready(function () {
+      $(main_of_tr.lastChild).click(function () {
+        main_of_tr.remove();
+      });
+    });
+  });
+});
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+  };
+  http.open("GET", "http://localhost:5502/", true);
+  http.send();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const db_2= ()=> {
+  var http = new XMLHttpRequest();
+
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 200) {
+      let data1 = JSON.stringify(http.response);
+      console.log(data1)
+      
+  };
+  http.open("GET", "http://localhost:5502/Suppliers.html", true);
+  http.send();
+}
+console.log(1)
+}
 
 const darkmode = () => {
   let darkmode = document.getElementById("darkmode");
@@ -607,6 +884,14 @@ const insert_data = () => {
       cel6.innerHTML = employee_input[5].value;
       cel7.innerHTML = employee_input[6].value;
       cel8.append(remove_btn1);
+
+
+
+
+
+
+
+
 
       let main_of_tr = remove_btn1.parentElement.parentElement;
       $(document).ready(function () {
