@@ -296,7 +296,7 @@ img {
 }
 
 .count_items {
-  display: none;
+  /* display: none; */
   color: crimson;
   font-size: 56px;
   padding: 2px;

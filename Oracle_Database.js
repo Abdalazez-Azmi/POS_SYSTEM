@@ -112,31 +112,29 @@ async function selectAllSUPPLIERS(req, res) {
   }
 }
 
-//get /employess
+
+
+
+
+
+
+
+
+
+
+
+
 // app.get("/", function (req, res) {
-//   selectAllEmployees(req, res)
+//   selectAllSUPPLIERS(req, res)
+
 // });
 
 
-app.get("/Suppliers.html", function (req, res) {
-  selectAllSUPPLIERS(req, res)
+app.get("/", function (req, res) {
+  selectAllEmployees(req, res)
+
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// *************************************************************************************************************
-
-
 
 
 

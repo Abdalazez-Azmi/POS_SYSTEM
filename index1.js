@@ -1,3 +1,4 @@
+
 let add_items = document.getElementById("icon");
 let products_animate = document.getElementsByClassName("final");
 let main_content = document.getElementsByClassName("d-1");
@@ -79,62 +80,6 @@ const show_data = () => {
   }
 };
 
-
-
-const db_Products = () => {
-  var http = new XMLHttpRequest();
-
-  http.onreadystatechange = function () {
-    if (http.readyState == 4 && http.status == 200) {
-      let data = JSON.parse(this.response);
-      for (let i = 0; i < data.rows.length; i++) {
-        // employee_input[i].value=data.rows[0][i]
-        // console.log(data.rows[0])
-
-        let row = table_add_product.insertRow();
-  let cell1 = row.insertCell();
-  let cell2 = row.insertCell();
-  let cell3 = row.insertCell();
-  let cell4 = row.insertCell();
-  let cell5 = row.insertCell();
-  let cell6 = row.insertCell();
-  let cell7 = row.insertCell();
-  let cell8 = row.insertCell();
-  let cell9 = row.insertCell();
-  let minus = document.createElement("button");
-  minus.innerHTML = "X";
-  minus.setAttribute("id", "crud");
-  cell9.append(minus);
-  let remove_count = document.createElement("button");
-  remove_count.innerHTML = "-";
-  remove_count.setAttribute("id", "remove_count");
-  let Add_count = document.createElement("button");
-  Add_count.innerHTML = "+";
-  Add_count.setAttribute("id", "Add_count");
-  Add_count.setAttribute("class", "crud+");
-  remove_count.setAttribute("class", "crud");
-  cell7.append(Add_count);
-  cell8.append(remove_count);
-  cell1.innerHTML = data.rows[i][0]
-  cell2.innerHTML = data.rows[i][1]
-  cell3.innerHTML = data.rows[i][2]
-  cell4.innerHTML = data.rows[i][3]
-  cell5.innerHTML = data.rows[i][4]
-  cell6.innerHTML = cell2.innerHTML * cell3.innerHTML;
-
-
-
-
-
-
-
-      }
-    }
-  };
-  http.open("GET", "http://localhost:5502/", true);
-  http.send();
-  console.log("There is ERROR");
-};
 
 
 
@@ -334,12 +279,12 @@ window.onload = $(document).ready(function () {
   }
 });
 
-window.onload = $(document).ready(function () {
-  for (let i = 0; i < products_animate.length; i++) {
-    $(products_animate[i]).hide();
-    $(products_animate[i]).show(10000);
-  }
-});
+// window.onload = $(document).ready(function () {
+//   for (let i = 0; i < products_animate.length; i++) {
+//     $(products_animate[i]).hide();
+//     $(products_animate[i]).show(10000);
+//   }
+// });
 
 const add_accounts = () => {
   if (Accounts.innerHTML === "Show Information") {
@@ -517,32 +462,54 @@ buttons.map((button) => {
   });
 });
 
+
+
+
+
+
+
+// window.onload = $(document).click(function(){
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let counter = 0;
 
 const Additems = () => {
+  counter++
   let item_name = document.getElementsByClassName("product_name");
-  let var1 = document.getElementsByClassName("inp");
-
-  let prices = [];
+  
   for (let i = 0; i < item_name.length; i++) {
-    let arr_items = [{}];
+    let var3= event.target.parentElement.parentElement
+    let var4 = var3.children[1]
+    let arr_items = [];
+    let last_price = var4.children[4].value
+    let count= var4.children[1].innerHTML=counter
     arr_items.push({
-      name: item_name[i].innerHTML,
-      Price: var1[i].value,
-      Count: 0,
+      "name": var3.children[2].innerHTML,
+      "Price": last_price,
+      "Count": count,
     });
-    countOfItem[i].innerHTML = 0;
+    console.log(arr_items)
     countOfItem[i].style.display = "inline-block";
-
-    arr_items[i].onclick = counter++;
-
-    // countOfItem[i].innerHTML = arr_items[0].Count;
-
-    prices.push(var1[i].value);
-    // let result = prices[i] * counter;
-    // products_total.value = result;
+    
+    
+    return arr_items
   }
-
+  // console.log(var3.children[2].innerHTML)
+  
+  
   // localStorage.setItem("prices", prices);
   // localStorage.setItem("result", result);
   // localStorage.setItem("item_name", item_name[i].innerHTML);
