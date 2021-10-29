@@ -491,6 +491,7 @@ const Additems = () => {
   let item_name = document.getElementsByClassName("product_name");
   
   for (let i = 0; i < item_name.length; i++) {
+    countOfItem[i].style.display = "inline-block";
     let var3= event.target.parentElement.parentElement
     let var4 = var3.children[1]
     let arr_items = [];
@@ -501,20 +502,17 @@ const Additems = () => {
       "Price": last_price,
       "Count": count,
     });
-    console.log(arr_items)
-    countOfItem[i].style.display = "inline-block";
+    localStorage.setItem('key_name',arr_items[i].name)
+    localStorage.setItem('key_count',arr_items[i].Count)
+    localStorage.setItem('key_price',arr_items[i].Price)
+   
+
+
     
-    
-    return arr_items
   }
-  // console.log(var3.children[2].innerHTML)
   
   
-  // localStorage.setItem("prices", prices);
-  // localStorage.setItem("result", result);
-  // localStorage.setItem("item_name", item_name[i].innerHTML);
-  // localStorage.setItem("counter", counter);
-  // console.log(item_name[i].innerHTML);
+
 };
 
 const main_table_of_products = () => {
@@ -532,9 +530,9 @@ const main_table_of_products = () => {
   let cell5 = row.insertCell();
   let cell6 = row.insertCell();
   let cell7 = row.insertCell();
-  cell1.innerHTML = localStorage.getItem("item_name");
-  cell2.innerHTML = localStorage.getItem("counter");
-  cell3.innerHTML = localStorage.getItem("result");
+  cell1.innerHTML =   localStorage.getItem('key_name')
+  cell2.innerHTML = localStorage.getItem('key_count')
+  cell3.innerHTML = localStorage.getItem('key_price')
   cell6.innerHTML = cell2.innerText * cell3.innerText;
   let btn_add = document.createElement("button");
   let btn_minus = document.createElement("button");
