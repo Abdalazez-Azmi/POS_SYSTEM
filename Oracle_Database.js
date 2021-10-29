@@ -4,7 +4,6 @@ var app = express();
 const cors = require("cors")
 app.use(cors())
 app.use(express.json())
-var Supplier = 8081;
 
 const port = 5502;
 var password = "pos";
@@ -60,63 +59,17 @@ async function selectAllEmployees(req, res) {
   }
 }
 
-//get /employess
-app.get("/", function (req, res) {
-  selectAllEmployees(req, res);
-});
-
-async function selectEmployeesById(req, res, id) {
-  try {
-    connection = await oracledb.getConnection({
-      user: "hr",
-      password: password,
-      connectString: "localhost:1521/orcl",
-    });
-    // run query to get employee with employee_id
-    result = await connection.execute(
-      `SELECT * FROM employees where employee_id=:id`,
-      [id]
-    );
-  } catch (err) {
-    //send error message
-    return res.send(err.message);
-  } finally {
-    if (connection) {
-      try {
-        // Always close connections
-        await connection.close();
-      } catch (err) {
-        return console.error(err.message);
-      }
-    }
-    if (result.rows.length == 0) {
-      //query return zero employees
-      return res.send("query send no rows");
-    } else {
-      //send all employees
-
-      return res.send(result.rows);
-    }
-  }
-}
-
-//get /employee?id=<id employee>
-app.get("/", function (req, res) {
-  //get query param ?id
-  let id = req.query.id;
-  // id param if it is number
-  if (isNaN(id)) {
-    res.send("Query param id is not number");
-    return;
-  }
-  selectEmployeesById(req, res, id);
-});
+// //get /employess
+// app.get("/", function (req, res) {
+//   selectAllEmployees(req, res)
+// });
 
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-async function selectAllPRODUCTS(req, res) {
+async function selectAllSUPPLIERS(req, res) {
   try {
     connection = await oracledb.getConnection({
       user: "pos",
@@ -128,7 +81,7 @@ async function selectAllPRODUCTS(req, res) {
     // run query to get all employees
 
  
-    result = await connection.execute(data);
+    result = await connection.execute('select * from suppliers');
       res.send(result)
   
   } catch (err) {
@@ -160,155 +113,36 @@ async function selectAllPRODUCTS(req, res) {
 }
 
 //get /employess
-app.get("/", function (req, res) {
-  selectAllPRODUCTS(req, res);
-});
-
-async function selectEmployeesById(req, res, id) {
-  try {
-    connection = await oracledb.getConnection({
-      user: "hr",
-      password: password,
-      connectString: "localhost:1521/orcl",
-    });
-    // run query to get employee with employee_id
-    result = await connection.execute(
-      `SELECT * FROM employees where employee_id=:id`,
-      [id]
-    );
-  } catch (err) {
-    //send error message
-    return res.send(err.message);
-  } finally {
-    if (connection) {
-      try {
-        // Always close connections
-        await connection.close();
-      } catch (err) {
-        return console.error(err.message);
-      }
-    }
-    if (result.rows.length == 0) {
-      //query return zero employees
-      return res.send("query send no rows");
-    } else {
-      //send all employees
-
-      return res.send(result.rows);
-    }
-  }
-}
-
-//get /employee?id=<id employee>
-app.get("", function (req, res) {
-  //get query param ?id
-  let id = req.query.id;
-  // id param if it is number
-  if (isNaN(id)) {
-    res.send("Query param id is not number");
-    return;
-  }
-  selectEmployeesById(req, res, id);
-});
+// app.get("/", function (req, res) {
+//   selectAllEmployees(req, res)
+// });
 
 
-
-
-
-async function selectAllsuppliers(req, res) {
-  try {
-    connection = await oracledb.getConnection({
-      user: "pos",
-      password: password,
-      connectString: "localhost:1521/orcl",
-    });
-
-    console.log("connected to database");
-    // run query to get all employees
-
- 
-    result = await connection.execute(data);
-      res.send(result)
-  
-  } catch (err) {
-    //send error message
-    return res.send(err.message);
-  } finally {
-    if (connection) {
-      try {
-        // Always close connections
-        await connection.close();
-        console.log("close connection success");
-      } catch (err) {
-        console.error(err.message);
-      }
-    }
-    if (result.rows.length == 0) {
-      //query return zero employees
-      return res.send("there is no rows");
-    } else {
-      result = result.rows;
-      console.log(result); 
-    
-
-      //send all employees
-
-      return res.send(result.rows);
-    }
-  }
-}
-
-//get /employess
-app.get("/", function (req, res) {
-  selectAllsuppliers(req, res);
-});
-
-async function selectEmployeesById(req, res, id) {
-  try {
-    connection = await oracledb.getConnection({
-      user: "hr",
-      password: password,
-      connectString: "localhost:1521/orcl",
-    });
-    // run query to get employee with employee_id
-    result = await connection.execute(
-      `SELECT * FROM employees where employee_id=:id`,
-      [id]
-    );
-  } catch (err) {
-    //send error message
-    return res.send(err.message);
-  } finally {
-    if (connection) {
-      try {
-        // Always close connections
-        await connection.close();
-      } catch (err) {
-        return console.error(err.message);
-      }
-    }
-    if (result.rows.length == 0) {
-      //query return zero employees
-      return res.send("query send no rows");
-    } else {
-      //send all employees
-
-      return res.send(result.rows);
-    }
-  }
-}
-
-//get /employee?id=<id employee>
 app.get("/Suppliers.html", function (req, res) {
-  //get query param ?id
-  let id = req.query.id;
-  // id param if it is number
-  if (isNaN(id)) {
-    res.send("Query param id is not number");
-    return;
-  }
-  selectEmployeesById(req, res, id);
+  selectAllSUPPLIERS(req, res)
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *************************************************************************************************************
+
+
+
+
+
+
+
+
 
 
 
