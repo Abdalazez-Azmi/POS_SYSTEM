@@ -462,12 +462,16 @@ const Additems = () => {
   let item_name = document.getElementsByClassName("product_name");
 
   for (let i = 0; i < item_name.length; i++) {
+    
     countOfItem[i].style.display = "inline-block";
     let var3 = event.target.parentElement.parentElement;
     let var4 = var3.children[1];
     let arr_items = [];
     let last_price = var4.children[4].value;
     let count = (var4.children[1].innerHTML = counter);
+    if (counter < 1) {
+      countOfItem[i].style.display='none'
+  }
     arr_items.push({
       name: var3.children[2].innerHTML,
       Price: last_price,
@@ -476,6 +480,11 @@ const Additems = () => {
     localStorage.setItem("key_name", arr_items[i].name);
     localStorage.setItem("key_count", arr_items[i].Count);
     localStorage.setItem("key_price", arr_items[i].Price);
+
+
+products_total.value=last_price * counter
+
+
   }
   main_table_of_products();
 };
@@ -713,12 +722,14 @@ const clear_data = () => {
 };
 
 const remove_items = () => {
+  if (counter < 1) {
+    countOfItem[i].style.display='none'
+}
   counter--;
   localStorage.setItem("counter-", counter);
   for (let i = 0; i < countOfItem.length; i++) {
-    countOfItem[i].innerHTML = counter;
+    countOfItem[i].innerHTML=counter
   }
-  products_total.value = products_total.value - input_price * counter;
 };
 
 const emptyOrNot = () => {};
