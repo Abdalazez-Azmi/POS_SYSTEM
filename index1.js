@@ -185,7 +185,7 @@ const product_info = () => {
   secound_div.appendChild(span);
   let span_for_Count = document.createElement("span");
   span_for_Count.setAttribute("class", "count_items");
-  span_for_Count.innerHTML=0
+  span_for_Count.innerHTML = 0;
   secound_div.appendChild(span_for_Count);
   let span_minus = document.createElement("span");
   span_minus.setAttribute("onclick", "remove_items()");
@@ -469,7 +469,7 @@ const Additems = () => {
     localStorage.setItem("key_count", arr_items[i].Count);
     localStorage.setItem("key_price", arr_items[i].Price);
   }
-  main_table_of_products()
+  main_table_of_products();
 };
 
 window.onload = $(document).ready(function () {
@@ -487,100 +487,74 @@ window.onload = $(document).ready(function () {
   let cell5 = row.insertCell();
   let cell6 = row.insertCell();
   let cell7 = row.insertCell();
-  
-  let btn_add = document.createElement('button')
-  btn_add.innerHTML='+'
-  btn_add.setAttribute('id','btn_add')
-  cell4.append(btn_add)
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+  let btn_add = document.createElement("button");
+  btn_add.innerHTML = "+";
+  btn_add.setAttribute("id", "btn_add");
+  cell4.append(btn_add);
+
   cell1.innerHTML = localStorage.getItem("key_name");
   let count_of_count = localStorage.getItem("key_count");
-  cell2.innerHTML = count_of_count
+  cell2.innerHTML = count_of_count;
   cell3.innerHTML = localStorage.getItem("key_price");
 
-
-  
   let remove = document.createElement("button");
   remove.setAttribute("id", "remove");
   ///jquery delete
   remove.innerHTML = "X";
-  localStorage.setItem('cell4',cell4)
+  localStorage.setItem("cell4", cell4);
   cell7.append(remove);
   let btn_minus = document.createElement("button");
   btn_minus.setAttribute("id", "btn_minus");
   btn_minus.innerHTML = "-";
   cell5.append(btn_minus);
-  
-  
-  
-  $('#btn_add').click(function(){
-    console.log(count_of_count)
-    count_of_count++
-    cell2.innerHTML=count_of_count
-    cell6.innerHTML=cell2.innerHTML *cell3.innerHTML
-    give_cust.value = cust_give_you.value - main_Total.value
-    give_cust.addEventListener("input", x => 
-  give_cust.value = main_Total.value - cust_give_you.value
-  )
-    cust_give_you.addEventListener("input", x => 
-  give_cust.value = x.target.value - main_Total.value
-  
-  
-  )
 
+  $("#btn_add").click(function () {
+    console.log(count_of_count);
+    count_of_count++;
+    cell2.innerHTML = count_of_count;
+    cell6.innerHTML = cell2.innerHTML * cell3.innerHTML;
+    give_cust.value = cust_give_you.value - main_Total.value;
+    give_cust.addEventListener(
+      "input",
+      (x) => (give_cust.value = main_Total.value - cust_give_you.value)
+    );
+    cust_give_you.addEventListener(
+      "input",
+      (x) => (give_cust.value = x.target.value - main_Total.value)
+    );
 
+    main_Total.value = cell6.innerHTML;
+  });
 
+  $("#btn_minus").click(function () {
+    count_of_count--;
+    cell2.innerHTML = count_of_count;
+    cell2.innerHTML < 1 ? cell2.parentElement.remove() : null;
+    cell6.innerHTML = cell2.innerHTML * cell3.innerHTML;
+    main_Total.value = cell6.innerHTML;
+    cust_give_you.addEventListener(
+      "input",
+      (x) => (give_cust.value = x.target.value - main_Total.value)
+    );
 
+    give_cust.addEventListener(
+      "input",
+      (x) => (give_cust.value = main_Total.value - cust_give_you.value),
+      console.log((give_cust.value = main_Total.value - cust_give_you.value))
+    );
+  });
+  cell6.innerHTML = cell2.innerHTML * cell3.innerHTML;
+  cust_give_you.addEventListener(
+    "input",
+    (x) => (give_cust.value = x.target.value - main_Total.value)
+  );
 
+  give_cust.addEventListener(
+    "input",
+    (x) => (give_cust.value = main_Total.value - cust_give_you.value)
+  );
 
-    main_Total.value=cell6.innerHTML
-  })
-  
-  $('#btn_minus').click(function(){
-    count_of_count--
-    cell2.innerHTML=count_of_count
-    cell2.innerHTML < 1  ? cell2.parentElement.remove(): null;
-    cell6.innerHTML=cell2.innerHTML *cell3.innerHTML
-  main_Total.value=cell6.innerHTML 
-  cust_give_you.addEventListener("input", x => 
-  give_cust.value = x.target.value - main_Total.value
-  
-  
-  )
-
-
-  give_cust.addEventListener("input",x => 
-  give_cust.value = main_Total.value - cust_give_you.value,
-  console.log(  give_cust.value = main_Total.value - cust_give_you.value)
-  )
-  
-
-  
-  })
-  cell6.innerHTML=cell2.innerHTML *cell3.innerHTML
-  cust_give_you.addEventListener("input", x => 
-  give_cust.value = x.target.value - main_Total.value
-  
-  
-  )
-
-  
-  give_cust.addEventListener("input", x => 
-  give_cust.value = main_Total.value - cust_give_you.value
-  )
- 
-  
-  
-  
-  
   for (let i = 0; i < row.length * 4; i++) {
     cell1.setAttribute("class", "rows");
     cell2.setAttribute("class", "rows");
@@ -588,43 +562,19 @@ window.onload = $(document).ready(function () {
     cell5.setAttribute("class", "rows");
     cell6.setAttribute("class", "rows");
   }
-  
-  
-  
+
   let main_table = remove.parentElement.parentElement;
   $(main_table.lastChild).click(function () {
     main_table.remove();
   });
-  
-  
-  main_Total.value=cell6.innerHTML
-  
-  if(cust_give_you.value > 0){
-  give_cust.value = cust_give_you.value - main_Total.value
-  console.log(5)
-  
-}
-  
-  
-  
-  
+
+  main_Total.value = cell6.innerHTML;
+
+  if (cust_give_you.value > 0) {
+    give_cust.value = cust_give_you.value - main_Total.value;
+    console.log(5);
+  }
 });
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const insert_data = () => {
   for (let i = 0; i < employee_input.length; i++) {
@@ -740,7 +690,6 @@ const insert_supplier = () => {
   cell2.innerHTML = input_for_suppliers[1].value;
   cell3.innerHTML = input_for_suppliers[2].value;
 };
-
 
 const remove_emp_leaved = () => {
   let lists = leaved.children;
