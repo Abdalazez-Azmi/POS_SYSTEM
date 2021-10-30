@@ -4,7 +4,6 @@ let main_content = document.getElementsByClassName("d-1");
 let products_total = document.getElementById("total");
 let main_Total = document.getElementById("main_Total");
 let f_p = document.getElementsByClassName("f-p");
-let p_d = document.getElementsByClassName('product_name')
 let stat_1 = document.getElementById("status");
 let tag4 = document.getElementById("tag4");
 let countOfItem = document.getElementsByClassName("count_items");
@@ -70,15 +69,21 @@ const remove = () => {
   }
 };
 
-const show_data = () => {
-  if (sec_div.style.display !== "none") {
-    sec_div.style.display = "none";
-    show.innerHTML = "Show Data";
-  } else {
-    sec_div.style.display = "block";
-    show.innerHTML = "Hide Data";
-  }
-};
+
+window.onload = $().ready(function(){
+  $('#show').click(function(){
+
+    if (sec_div.style.display !== "none") {
+      sec_div.style.display = "none";
+      show.innerHTML = "Show Data";
+    } else {
+      sec_div.style.display = "block";
+      show.innerHTML = "Hide Data";
+    }
+
+  })
+})
+  
 
 const product_info = () => {
   let row = table_add_product.insertRow();
@@ -445,15 +450,11 @@ buttons.map((button) => {
   });
 });
 
-window.onload = show_data()
-
-
-let input_search = document.getElementById('search')
-const search =()=>{
 
 
 
-}
+
+
 let counter = 0;
 
 const Additems = () => {
