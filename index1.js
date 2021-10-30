@@ -4,6 +4,7 @@ let main_content = document.getElementsByClassName("d-1");
 let products_total = document.getElementById("total");
 let main_Total = document.getElementById("main_Total");
 let f_p = document.getElementsByClassName("f-p");
+let p_d = document.getElementsByClassName('product_name')
 let stat_1 = document.getElementById("status");
 let tag4 = document.getElementById("tag4");
 let countOfItem = document.getElementsByClassName("count_items");
@@ -444,9 +445,15 @@ buttons.map((button) => {
   });
 });
 
-// window.onload = $(document).click(function(){
-// })
+window.onload = show_data()
 
+
+let input_search = document.getElementById('search')
+const search =()=>{
+
+
+
+}
 let counter = 0;
 
 const Additems = () => {
