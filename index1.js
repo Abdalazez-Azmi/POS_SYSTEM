@@ -272,12 +272,12 @@ window.onload = $(document).ready(function () {
   }
 });
 
-// window.onload = $(document).ready(function () {
-//   for (let i = 0; i < products_animate.length; i++) {
-//     $(products_animate[i]).hide();
-//     $(products_animate[i]).show(10000);
-//   }
-// });
+window.onload = $(document).ready(function () {
+  for (let i = 0; i < products_animate.length; i++) {
+    $(products_animate[i]).hide();
+    $(products_animate[i]).show(10000);
+  }
+});
 
 const add_accounts = () => {
   if (Accounts.innerHTML === "Show Information") {
