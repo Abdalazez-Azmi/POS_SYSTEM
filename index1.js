@@ -467,9 +467,9 @@ const Additems = () => {
       Price: last_price,
       Count: count,
     });
-    localStorage.setItem("key_name", arr_items[i].name);
-    localStorage.setItem("key_count", arr_items[i].Count);
-    localStorage.setItem("key_price", arr_items[i].Price);
+    sessionStorage.setItem("key_name", arr_items[i].name);
+    sessionStorage.setItem("key_count", arr_items[i].Count);
+    sessionStorage.setItem("key_price", arr_items[i].Price);
 
     products_total.value = last_price * counter;
   }
@@ -497,10 +497,10 @@ window.onload = $(document).ready(function () {
   btn_add.setAttribute("id", "btn_add");
   cell4.append(btn_add);
 
-  cell1.innerHTML = localStorage.getItem("key_name");
-  let count_of_count = localStorage.getItem("key_count");
+  cell1.innerHTML = sessionStorage.getItem("key_name");
+  let count_of_count = sessionStorage.getItem("key_count");
   cell2.innerHTML = count_of_count;
-  cell3.innerHTML = localStorage.getItem("key_price");
+  cell3.innerHTML = sessionStorage.getItem("key_price");
 
   let remove = document.createElement("button");
   remove.setAttribute("id", "remove");
